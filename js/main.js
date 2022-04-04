@@ -1,6 +1,8 @@
 window.onload=function(){
     let url = window.location.pathname;
 
+    console.log(url)
+    
     if(url == "/watchshop/index.html" || url == "/"){
         dohvati("satovi.json",najnovijiProizvodi)
         dohvati("satovi.json",malaKartica)
