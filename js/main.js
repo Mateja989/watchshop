@@ -33,15 +33,22 @@ function slider(){
     setTimeout('slider()',3500);
 }
 
-dohvati("satovi.json", function(result){
-    localStorage.setItem("nizSatova", JSON.stringify(result));
-})
-
 dohvati("kategorije.json",ispisKat)
 dohvati("brendovi.json",ispisBrendova)
 
+dohvati("satovi.json", function(result){
+    localStorage.setItem("nizSatova", JSON.stringify(result));
+})
+dohvati("brendovi.json", function(result){
+    localStorage.setItem("nizBrendova", JSON.stringify(result));
+})
+dohvati("kategorije.json", function(result){
+    localStorage.setItem("nizKategorija", JSON.stringify(result));
+})
 
-let satoviLS = JSON.parse(localStorage.getItem("nizSatova"))
+var satoviLS = JSON.parse(localStorage.getItem("nizSatova"))
+var brendovi=JSON.parse(localStorage.getItem("nizBrendova"))
+var kategorije=JSON.parse(localStorage.getItem("nizKategorija"))
 
 console.log(satoviLS)
 
@@ -60,7 +67,6 @@ function ispisKat(nizKategorija){
                 </div>`
     }
     $("#accordian").html(ispis)
-    localStorage.setItem("kategorija",JSON.stringify(nizKategorija));
    /* $('.lista a').click(function() {
         localStorage.setItem("cekiranoKat", this.dataset.idkat);
         filterChange();
@@ -75,7 +81,6 @@ function ispisBrendova(nizBrendova){
     }
     ispis+=`</ul>`
     $("#brendovi").html(ispis)
-    localStorage.setItem("brend",JSON.stringify(nizBrendova));
    /* $('.lista1 a').click(function() {
         localStorage.setItem("cekiranoBrend", this.dataset.brendid);
         filterChange();
@@ -218,8 +223,8 @@ dohvati('kolekcija.json',kreirajKolekciju)//rb
 let kolekcija=[]
 
 //dohvatanje iz local storage napisati funkciju    
-var brendovi=JSON.parse(localStorage.getItem("brend"))
-var kategorije=JSON.parse(localStorage.getItem("kategorija"))
+var brendovi=JSON.parse(localStorage.getItem("nizBrendova"))
+var kategorije=JSON.parse(localStorage.getItem("nizKategorija"))
 
 
 
