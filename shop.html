@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mateja Mastelica 73/20">
+    <title>Proizvodi | WatchShop</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f135de3b64.js" crossorigin="anonymous"></script> 
+    <link rel="shortcut icon" href="images/home/watch.ico">
+</head><!--/head-->
+<body>	
+	<div class="mx-auto fixed-top" id="navigation">
+        <div class="container-fluid">
+			<div class="row" id="navigation-row">
+				<div id="logo" class="col-sm-3 mt-4">
+				  <a href="index.html"><img src="images/home/watchshop-logoV31.svg" alt=""/></a>
+				</div>
+				<div class="col-sm-5">
+					<ul class="navigacija">
+						<li><a href="" class="activeLink">Početna</a></li>
+						<li><a href="">Proizvodi</a></li>
+						<li><a href="checkout.html">Kontakt</a></li>
+						<li><a href="">Autor</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4">
+					<ul class="korpaMenu">
+					
+					</ul>
+				</div>
+			</div>
+		</div>
+    </div>
+	<header class="bg-cover" id="slider">
+		<div class="container mm-z">
+		  <div class="row">
+			<div class="col-12 text-center mm-margin">
+			  <h2>LET`S START TO DESIGN</h2>
+			  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+			  <div>
+				  <div>
+					  <button>Kupuj odmah</button>
+					  <button>Izabrano za vas</button>
+				  </div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </header>
+	<div id="advertisement">
+		<div class="container mt-5">
+			<div class="row">
+				<div class="nee">
+					<ul class="d-flex stay">
+						<li>Početna</li>
+						<span><li>/</li></span>
+						<li>Proizvodi</li>
+					</ul>
+				</div>
+				<h1 class="naslovC">Proizvodi</h1>
+			</div>
+		</div>
+	</div>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar left">
+						<h2>Sortiraj</h2>
+						<div class="col-12 chb panel-group category-products">
+							<select name="" id="ddlSortiranje">
+								<option value="0">Izaberite</option>
+								<option value="nazivAsc">Naziv-rastuci</option>
+								<option value="nazivDsc">Naziv-opadajuci</option>
+								<option value="cenaAsc">Cena-rastuca</option>
+								<option value="cenaDsc">Cena-opadajuca</option>
+							</select>
+						</div>
+						<h2>Kategorije</h2>
+						<div class="col-12 chb panel-group category-products">
+							<ul id="kategorije"></ul>
+							</ul>
+						</div>
+						<h2>Kolekcije</h2>
+						<div class="col-12 chb panel-group category-products">
+							<ul id="kolekcija">
+							</ul>
+						</div>
+						<h2>Brendovi</h2>
+						<div class="col-12 chb panel-group category-products">
+							<ul id="brend">
+							</ul>
+						</div>
+						<h2>Pretraga</h2>
+						<div class="col-12 chb panel-group category-products">
+							<input type="search" id="pretraga"  placeholder="Šifra ili naziv proizvoda...">
+						</div>
+						<h2>Stanje</h2>
+						<div class="col-12 chb panel-group category-products">
+							<input type="radio" value="dostupno" class="stanje" id="naStanju" name="stanje">Trenutno dostupno
+							<br/>
+							<input type="radio" value="nedostupno" class="stanje" id="NijenaStanju" name="stanje" >Trenutno nedostupno
+							<br/>
+							<input type="radio" class="stanje" value="svi" name="stanje" id="svi" checked>Svi proizvodi
+							<br/>
+						</div>
+					</div>	
+				</div>
+				<div class="col-sm-9 padding-right">
+
+					<div class="features-items">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer id="footer"><!--Footer-->
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<ul class="pull-left liD">
+						<li><a href="#">Dokumentacija</a></li>
+						<li><a href="#">main.js</a></li>
+						<li><a href="#">sitemap</a></li>
+						<li><a href="#">autor</a></li>
+					</ul>
+					<p><img src="images/home/watchshop-logoV31.svg" class="pull-right slika"></p>
+				</div>
+			</div>
+			<div class="container bg">
+				<div class="row">
+					<p>Copyright © Mateja Mastelica 73/20.</p>
+				</div>
+			</div>
+		</div>
+	</footer><!--/Footer-->
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<!--<script src="js/main.js"></script>-->
+	<script src="js/main.js" ></script>
+</body>
+</html>

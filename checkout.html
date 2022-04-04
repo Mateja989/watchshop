@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Checkout | E-Shopper</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+	<div class="mx-auto fixed-top" id="navigation">
+        <div class="container-fluid">
+			<div class="row" id="navigation-row">
+				<div id="logo" class="col-sm-3 mt-4">
+				  <a href="index.html"><img src="images/home/watchshop-logoV31.svg" alt=""/></a>
+				</div>
+				<div class="col-sm-5">
+					<ul class="navigacija">
+						<li><a href="index.html" class="activeLink">Početna</a></li>
+						<li><a href="">Proizvodi</a></li>
+						<li><a href="checkout.html">Kontakt</a></li>
+						<li><a href="">Autor</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4">
+					<ul class="korpaMenu">
+					
+					</ul>
+				</div>
+			</div>
+		</div>
+    </div>
+	<div class="container mt-5 strana">
+		<div class="row">
+			<div class="nee">
+				<ul class="d-flex stay">
+					<li>Pocetna</li>
+					<span><li>/</li></span>
+					<li>Korpa</li>
+				</ul>
+			</div>
+			<h1 class="naslovC">Korpa</h1>
+		</div>
+	</div>
+	<hr/>
+	<section id="cart_items">
+		<div class="container">
+			<div class="review-payment">
+				<h2>Pregled korpe</h2>
+			</div>
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Proizvod</td>
+							<td class="description">Naziv</td>
+							<td class="price">Cena</td>
+							<td class="quantity">Kolicina</td>
+							<td class="total">Ukupna cena</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="cart_product">
+								<a href=""><img src="images/cart/three.png" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Colorblock Scuba</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_price">
+								<p>$59</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<a class="cart_quantity_up" href=""> + </a>
+									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+									<a class="cart_quantity_down" href=""> - </a>
+								</div>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">$59</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="container">
+			<div class="shopper-informations">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="shopper-info">
+							<h4>Korisnik</h4>
+							<form id="korisnikForma">
+								<input type="text" placeholder="Korisničko ime *" id="korisnik">
+								<p class="nevidljiv">Ne postoji korisnik sa ovim imenom u bazi</p>
+								<input type="password" placeholder="Lozinka *" id="lozinka">
+								<p class="nevidljiv">Pogrešna lozinka</p>
+							</form>
+							<input type="button" class="btn btn-primary" value="Nastavi" id="btnNastavi">
+							<input type="button" class="btn btn-primary loz" value="Proveri lozinku" id="btnProvera">
+						</div>
+					</div>
+					<div class="col-sm-5 clearfix">
+						<div class="bill-to">
+							<h4>Informacije za plaćanje</h4>
+							<div class="form-two">
+								<form id="zaPlacanje" >
+									<input type="text" placeholder="Ime *" disabled id="ime">
+									<p class="nevidljiv">Ime mora biti uneto u formatu:Mateja,Vladana...</p>
+									<input type="text" placeholder="Prezime *" id="prezime" disabled>
+									<p class="nevidljiv">Prezime mora biti uneto u formatu:Mastelica,Mijić...</p>
+									<input type="text" placeholder="Email*" id="email" disabled>
+									<p class="nevidljiv">Email mora biti unet u formatu nekonesto3@gmail.com</p>
+									<select disabled id="ddlGrad"> 
+										<option value="">Grad *</option>
+
+									</select>
+									<p class="nevidljiv">Grad mora biti izabran</p>
+									<input type="text" placeholder="Postanski Broj *" id="posta" readonly>
+									<p class="nevidljiv">Automatsko popunjavanje</p>
+									<input type="text" placeholder="Ulica *" id="ulica" disabled>
+									<p class="nevidljiv">Ulica mora biti uneta</p>
+									<input type="text" placeholder="Broj telefona *" id="telefon" disabled>
+									<p class="nevidljiv">Broj telefona mora biti unet u formatu 060/1234-5678</p>
+									<h5>Način plaćanja: </h5>
+									<input type="radio" name="nacinPlacanja" id="kartica" disabled>Karticom
+									<input type="radio" name="nacinPlacanja" id="pouzece" disabled>Pouzećem
+									<p class="nevidljiv">Mora biti izabran način plaćanja</p>
+									<input type="text" placeholder="Broj kartice *" class="nevidljiv" id="karticaBroj" disabled>
+									<p class="nevidljiv">Broj kartice je obavezan i zahteva 17 cifara</p>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="order-message">
+							<h4>Informacije o kupovini</h4>
+							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
+							<input type="button" id="btnZavrsi" class="btn btn-primary" value="Završi kupovinu" disabled>
+							<h5 class="uspeh nevidljiv">Uspešno ste izvršili kupovinu</h5>
+						</div>	
+					</div>					
+				</div>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+	<footer id="footer"><!--Footer-->
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<ul class="pull-left liD">
+						<li><a href="#">Dokumentacija</a></li>
+						<li><a href="#">main.js</a></li>
+						<li><a href="#">sitemap</a></li>
+						<li><a href="#">autor</a></li>
+					</ul>
+					<p><img src="images/home/watchshop-logoV31.svg" class="pull-right slika"></p>
+				</div>
+			</div>
+			<div class="container bg">
+				<div class="row">
+					<p>Copyright © Mateja Mastelica 73/20.</p>
+				</div>
+			</div>
+		</div>
+	</footer><!--/Footer-->
+   <!-- <script src="js/jquery.js"></script> -->
+	
+    <script src="js/forma.js"></script>
+</body>
+</html>

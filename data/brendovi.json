@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "naziv":"Casio"
+    }, 
+    {
+        "id":2,
+        "naziv":"Armani"
+    },
+    {
+        "id":3,
+        "naziv":"Festina"
+    },
+    {
+        "id":4,
+        "naziv":"Michael Kors"
+    },
+    {
+        "id":5,
+        "naziv":"Fossil"
+    }
+]

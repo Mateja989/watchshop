@@ -1,0 +1,972 @@
+[
+    {
+        "id":1,
+        "naziv":"Casio Classic",
+        "kolekcijaId":1,
+        "datum":"2019-10-11",
+        "slika":{
+            "src":"assets/images/casio1.jpg",
+            "alt":"Casio 1"
+        },
+        "kategorijaId":1,
+        "brendId":1,
+        "cena":{
+            "stara":8000,
+            "nova":4890
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"45mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"MTP-1314D-1A",
+        "dostupnost": false
+    },
+    {
+        "id":2,
+        "naziv":"Casio Edifice",
+        "kolekcijaId":0,
+        "datum":"2021-09-01",
+        "slika":{
+            "src":"assets/images/casio2.jpg",
+            "alt":"Casio 2"
+        },
+        "kategorijaId":1,
+        "brendId":1,
+        "cena":{
+            "stara":18000,
+            "nova":14700
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"55mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"EFR-526D-7A",
+        "dostupnost":true
+    },
+    {
+        "id":3,
+        "naziv":"Casio Classic",
+        "kolekcijaId":0,
+        "datum":"2020-09-01",
+        "slika":{
+            "src":"assets/images/casio3.jpg",
+            "alt":"Casio 3"
+        },
+        "kategorijaId":1,
+        "brendId":1,
+        "cena":{
+            "stara":12190,
+            "nova":8600
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"43.5mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"MTP-1374L-1AVDF",
+        "dostupnost":true
+    },
+    {
+        "id":4,
+        "naziv":"Casio Classic",
+        "kolekcijaId":0,
+        "datum":"2020-07-01",
+        "slika":{
+            "src":"assets/images/casio4.jpg",
+            "alt":"Casio 4"
+        },
+        "kategorijaId":1,
+        "brendId":1,
+        "cena":{
+            "stara":8190,
+            "nova":6510
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"43.5mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"MTP-VD300L-2E",
+        "dostupnost":true
+    },
+    {
+        "id":5,
+        "naziv":"Casio Vintage",
+        "kolekcijaId":0,
+        "datum":"2018-07-25",
+        "slika":{
+            "src":"assets/images/casio5.jpg",
+            "alt":"Casio 5"
+        },
+        "kategorijaId":1,
+        "brendId":1,
+        "cena":{
+            "stara":null,
+            "nova":5160
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"A158WEA-9EF",
+        "dostupnost":true
+    },
+    {
+        "id":6,
+        "naziv":"Casio Edifice",
+        "kolekcijaId":0,
+        "datum":"2018-07-25",
+        "slika":{
+            "src":"assets/images/casio6.jpg",
+            "alt":"Casio 6"
+        },
+        "kategorijaId":1,
+        "brendId":1,
+        "cena":{
+            "stara":7990,
+            "nova":7100
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"45mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"EF-126D-7AVEF",
+        "dostupnost":true
+    },
+    {
+        "id":7,
+        "naziv":"Casio Edifice",
+        "kolekcijaId":2,
+        "datum":"2018-07-25",
+        "slika":{
+            "src":"assets/images/casio7.jpg",
+            "alt":"Casio 7"
+        },
+        "kategorijaId":1,
+        "brendId":1,
+        "cena":{
+            "stara":17000,
+            "nova":15360
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"EF-527D-2A",
+        "dostupnost":true
+    },
+    {
+        "id":8,
+        "naziv":"Armani Emporio",
+        "kolekcijaId":1,
+        "datum":"2020-10-25",
+        "slika":{
+            "src":"assets/images/armani1.jpg",
+            "alt":"Armani 1"
+        },
+        "kategorijaId":1,
+        "brendId":2,
+        "cena":{
+            "stara":38000,
+            "nova":34190
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"43mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"AR11181",
+        "dostupnost":true
+    },
+    {
+        "id":9,
+        "naziv":"Armani Emporio",
+        "kolekcijaId":2,
+        "datum":"2020-10-25",
+        "slika":{
+            "src":"assets/images/armani2.jpg",
+            "alt":"Armani 2"
+        },
+        "kategorijaId":1,
+        "brendId":2,
+        "cena":{
+            "stara":44000,
+            "nova":39990
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"AR1808",
+        "dostupnost":true
+    },
+    {
+        "id":10,
+        "naziv":"Armani Emporio",
+        "kolekcijaId":1,
+        "datum":"2021-10-25",
+        "slika":{
+            "src":"assets/images/armani3.jpg",
+            "alt":"Armani 3"
+        },
+        "kategorijaId":1,
+        "brendId":2,
+        "cena":{
+            "stara":48000,
+            "nova":42690
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"AR2448",
+        "dostupnost":true
+    },
+    {
+        "id":11,
+        "naziv":"Armani Emporio",
+        "kolekcijaId":0,
+        "datum":"2020-10-25",
+        "slika":{
+            "src":"assets/images/armani4.jpg",
+            "alt":"Armani 4"
+        },
+        "kategorijaId":1,
+        "brendId":2,
+        "cena":{
+            "stara":38000,
+            "nova":34190
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"AR2467",
+        "dostupnost":{
+            "id":2,
+            "klasa":"Nedostupno"
+        }
+    },
+    {
+        "id":11,
+        "naziv":"Armani Emporio",
+        "kolekcijaId":1,
+        "datum":"2021-06-15",
+        "slika":{
+            "src":"assets/images/armani5.jpg",
+            "alt":"Armani 5"
+        },
+        "kategorijaId":1,
+        "brendId":2,
+        "cena":{
+            "stara":28000,
+            "nova":24190
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"AR12456",
+        "dostupnost":true
+    },
+    {
+        "id":12,
+        "naziv":"Armani Emporio",
+        "kolekcijaId":1,
+        "datum":"2020-10-25",
+        "slika":{
+            "src":"assets/images/armani6.jpg",
+            "alt":"Armani 6"
+        },
+        "kategorijaId":1,
+        "brendId":2,
+        "cena":{
+            "stara":24600,
+            "nova":23190
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"AR35461",
+        "dostupnost":false
+    },
+    {
+        "id":13,
+        "naziv":"Armani Emporio",
+        "kolekcijaId":2,
+        "datum":"2020-10-25",
+        "slika":{
+            "src":"assets/images/armani7.jpg",
+            "alt":"Armani 7"
+        },
+        "kategorijaId":1,
+        "brendId":2,
+        "cena":{
+            "stara":58000,
+            "nova":54190
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"AR21181",
+        "dostupnost":true
+    },
+    {
+        "id":14,
+        "naziv":"Festina",
+        "kolekcijaId":0,
+        "datum":"2020-10-25",
+        "slika":{
+            "src":"assets/images/festina1.jpg",
+            "alt":"Festina 1"
+        },
+        "kategorijaId":1,
+        "brendId":3,
+        "cena":{
+            "stara":38000,
+            "nova":30490
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"F20364/3",
+        "dostupnost":{
+            "id":2,
+            "klasa":"Nedostupno"
+        }
+    },
+    {
+        "id":15,
+        "naziv":"Festina",
+        "kolekcijaId":0,
+        "datum":"2020-10-25",
+        "slika":{
+            "src":"assets/images/festina2.jpg",
+            "alt":"Festina 2"
+        },
+        "kategorijaId":1,
+        "brendId":3,
+        "cena":{
+            "stara":18000,
+            "nova":15890
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"F20364/4",
+        "dostupnost":false
+    },
+    {
+        "id":16,
+        "naziv":"Festina",
+        "kolekcijaId":2,
+        "datum":"2021-03-05",
+        "slika":{
+            "src":"assets/images/festina3.jpg",
+            "alt":"Festina 3"
+        },
+        "kategorijaId":1,
+        "brendId":3,
+        "cena":{
+            "stara":32000,
+            "nova":28090
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"F20364/8",
+        "dostupnost":true
+    },
+    {
+        "id":17,
+        "naziv":"Fossil Relay",
+        "kolekcijaId":1,
+        "datum":"2022-01-05",
+        "slika":{
+            "src":"assets/images/fossil1.jpg",
+            "alt":"Fossil 1"
+        },
+        "kategorijaId":2,
+        "brendId":5,
+        "cena":{
+            "stara":15000,
+            "nova":14590
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"ES2022",
+        "dostupnost":false
+    },
+    {
+        "id":18,
+        "naziv":"Fossil Jesse",
+        "kolekcijaId":2,
+        "datum":"2020-01-05",
+        "slika":{
+            "src":"assets/images/fossil2.jpg",
+            "alt":"Fossil 2"
+        },
+        "kategorijaId":2,
+        "brendId":5,
+        "cena":{
+            "stara":15000,
+            "nova":13390
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"ES2023",
+        "dostupnost":true
+    },
+    {
+        "id":19,
+        "naziv":"Fossil Gabby",
+        "kolekcijaId":2,
+        "datum":"2022-01-05",
+        "slika":{
+            "src":"assets/images/fossil3.jpg",
+            "alt":"Fossil 3"
+        },
+        "kategorijaId":2,
+        "brendId":5,
+        "cena":{
+            "stara":17000,
+            "nova":15890
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"ES2024",
+        "dostupnost":false
+    },
+    {
+        "id":28,
+        "naziv":"Fossil Relay",
+        "kolekcijaId":1,
+        "datum":"2020-01-05",
+        "slika":{
+            "src":"assets/images/fossil12.jpg",
+            "alt":"Fossil 12"
+        },
+        "kategorijaId":2,
+        "brendId":5,
+        "cena":{
+            "stara":15000,
+            "nova":14590
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"ES202q2",
+        "dostupnost":{
+            "id":2,
+            "klasa":"Nedostupno"
+        }
+    },
+    {
+        "id":29,
+        "naziv":"Michael Kors Lexington",
+        "kolekcijaId":0,
+        "datum":"2022-01-05",
+        "slika":{
+            "src":"assets/images/michael1.jpg",
+            "alt":"Michael 1"
+        },
+        "kategorijaId":2,
+        "brendId":4,
+        "cena":{
+            "stara":35000,
+            "nova":34590
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"MK5735",
+        "dostupnost":true
+    },
+    {
+        "id":30,
+        "naziv":"Michael Kors Lexington",
+        "kolekcijaId":2,
+        "datum":"2020-01-05",
+        "slika":{
+            "src":"assets/images/michael2.jpg",
+            "alt":"Michael 2"
+        },
+        "kategorijaId":2,
+        "brendId":4,
+        "cena":{
+            "stara":25990,
+            "nova":24290
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"MK5736",
+        "dostupnost":false
+    },
+    {
+        "id":31,
+        "naziv":"Michael Kors Runway",
+        "kolekcijaId":2,
+        "datum":"2020-01-05",
+        "slika":{
+            "src":"assets/images/michael3.jpg",
+            "alt":"Michael 3"
+        },
+        "kategorijaId":2,
+        "brendId":4,
+        "cena":{
+            "stara":35000,
+            "nova":24290
+        },
+        "specifikacije":[
+            {
+                "naziv":"Garancija",
+                "vrednost":"25"
+            },
+            {
+                "naziv":"Kućište - materijal",
+                "vrednost":"Hirurški čelik"
+            },
+            {
+                "naziv":"Mehanizam - vrsta",
+                "vrednost":"Kvarcni"
+            },
+            {
+                "naziv":"Prečnik kućišta",
+                "vrednost":"50mm"
+            },
+            {
+                "naziv":"Staklo - materijal",
+                "vrednost":"Mineralno"
+            }
+        ],
+        "sifraArtikla":"MK5737",
+        "dostupnost":true
+    }
+]
+ 
