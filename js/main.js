@@ -33,7 +33,7 @@ function slider(){
     setTimeout('slider()',3500);
 }
 
-dohvati("kategorije.json",ispisKat)
+//dohvati("kategorije.json",ispisKat)
 dohvati("brendovi.json",ispisBrendova)
 
 dohvati("satovi.json", function(result){
@@ -85,6 +85,7 @@ function ispisBrendova(nizBrendova){
         localStorage.setItem("cekiranoBrend", this.dataset.brendid);
         filterChange();
     });*/
+    dohvati("kategorije.json",ispisKat)
 }
 //${brojProizvoda(br.id)}
 
@@ -156,6 +157,7 @@ function proizvodiIspis(nizProizvoda,idBloka){
     </div>`  
     } 
     document.querySelector(idBloka).innerHTML=ispis
+    dohvati("brendovi.json",ispisBrendova)
 }
 //obrada kartica
 function brojProizvoda(id){
