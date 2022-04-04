@@ -3,17 +3,17 @@ window.onload=function(){
 
     console.log(url)
 
-    if(url == "/watchshop/index.html" || url == "/"){
+    if(url == "/index.html" || url == "/"){
         dohvati("satovi.json",najnovijiProizvodi)
         dohvati("satovi.json",malaKartica)
         slider()
     }
-    if(url == "/watchshop/shop.html"){
+    if(url == "/shop.html"){
         dohvati("satovi.json",sviProizvodi)
         kreirajChb(brendovi,"#brend",'brendovi',".brendovi")
         kreirajChb(kategorije,"#kategorije",'kategorije',"#kategorije")
     }
-    if(url == "/watchshop/checkout.html"){
+    if(url == "/checkout.html"){
         proveraForme()
     }
 
