@@ -1,3 +1,17 @@
+function dohvati(url,callback){
+    $.ajax({
+        url: "data/" + url,
+        method: "get",
+        dataType: "json",
+        success:function(result){
+            callback(result);
+        },
+        error:function(err){
+            console.log(err)
+        }
+    })
+}
+
 window.onload=function(){
     let url = window.location.pathname;
 
@@ -467,20 +481,6 @@ function proveraForme(){
             }
         })
     }
-}
-//CALLBACK
-function dohvati(url,callback){
-    $.ajax({
-        url: "data/" + url,
-        method: "get",
-        dataType: "json",
-        success:function(result){
-            callback(result);
-        },
-        error:function(err){
-            console.log(err)
-        }
-    })
 }
 
 $(document).on("click",".mesto", function() {
