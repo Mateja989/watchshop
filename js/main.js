@@ -34,7 +34,7 @@ function slider(){
 }
 
 //dohvati("kategorije.json",ispisKat)
-dohvati("brendovi.json",ispisBrendova)
+//dohvati("brendovi.json",ispisBrendova)
 
 dohvati("satovi.json", function(result){
     localStorage.setItem("nizSatova", JSON.stringify(result));
