@@ -2,7 +2,7 @@ window.onload=function(){
     let url = window.location.pathname;
 
     console.log(url)
-    
+
     if(url == "/watchshop/index.html" || url == "/"){
         dohvati("satovi.json",najnovijiProizvodi)
         dohvati("satovi.json",malaKartica)
@@ -12,7 +12,6 @@ window.onload=function(){
         dohvati("satovi.json",sviProizvodi)
         kreirajChb(brendovi,"#brend",'brendovi',".brendovi")
         kreirajChb(kategorije,"#kategorije",'kategorije',"#kategorije")
-        document.querySelector('#slider').style.display='none'
     }
     if(url == "/watchshop/checkout.html"){
         proveraForme()
@@ -34,13 +33,17 @@ function slider(){
     setTimeout('slider()',3500);
 }
 
-
+dohvati("satovi.json", function(result){
+    localStorage.setItem("nizSatova", JSON.stringify(result));
+})
 
 dohvati("kategorije.json",ispisKat)
 dohvati("brendovi.json",ispisBrendova)
 
 
 let satoviLS = JSON.parse(localStorage.getItem("nizSatova"))
+
+console.log(satoviLS)
 
 function filterPromeni() {
     dohvati("satovi.json",sviProizvodi);
@@ -78,6 +81,7 @@ function ispisBrendova(nizBrendova){
         filterChange();
     });*/
 }
+//${brojProizvoda(br.id)}
 
 
 
@@ -99,7 +103,6 @@ function sviProizvodi(nizProizvoda){
     }
     else{
         proizvodiIspis(nizProizvoda,".features-items")
-        
     }
 }
 //funkcija za ispis najnovijih proizvoda na pocetnoj strani
