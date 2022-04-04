@@ -1,18 +1,18 @@
 window.onload=function(){
     let url = window.location.pathname;
 
-    if(url == "/index.html" || url == "/"){
+    if(url == "/watchshop/index.html" || url == "/"){
         dohvati("satovi.json",najnovijiProizvodi)
         dohvati("satovi.json",malaKartica)
         slider()
     }
-    if(url == "/shop.html"){
+    if(url == "/watchshop/shop.html"){
         dohvati("satovi.json",sviProizvodi)
         kreirajChb(brendovi,"#brend",'brendovi',".brendovi")
         kreirajChb(kategorije,"#kategorije",'kategorije',"#kategorije")
         document.querySelector('#slider').style.display='none'
     }
-    if(url == "/checkout.html"){
+    if(url == "/watchshop/checkout.html"){
         proveraForme()
     }
 
