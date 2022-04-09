@@ -102,7 +102,7 @@ function ispisKat(nizKategorija){
 function ispisBrendova(nizBrendova){
     let ispis=`<ul class="nav nav-pills nav-stacked">`
     for(let br of nizBrendova){
-        ispis+=`<li class="lista1"><a href="shop.html" data-brendid="${br.id}"> <span class="pull-right">(${brojProizvoda(br.id)})</span>${br.naziv}</a></li>`
+        ispis+=`<li class="lista1"><a href="shop.html" data-brendid="${br.id}"> <span class="pull-right"></span>${br.naziv}</a></li>`
     }
     ispis+=`</ul>`
     $("#brendovi").html(ispis)
@@ -114,7 +114,7 @@ function ispisBrendova(nizBrendova){
 }
 //${brojProizvoda(br.id)}
 
-
+//(${brojProizvoda(br.id)})
 
 //ispis proizvoda na shop strani
 function sviProizvodi(nizProizvoda){
@@ -186,11 +186,12 @@ function proizvodiIspis(nizProizvoda,idBloka){
 }
 
 //obrada kartica
-function brojProizvoda(id){
+/*function brojProizvoda(id){
     let filterprod = satoviLS.filter(el => el.brendId == id)
     return filterprod.length;
-    
-}
+}*/
+
+
 //obrada kolekcije
 function obradaKolekcije(id){
     let ispis=""
