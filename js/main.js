@@ -17,7 +17,9 @@ window.onload=function(){
 
     console.log(url)
 
-    if(url == "/watchshop/index.html" || url == "/"){
+    if(url == "/watchshop/index.html" || url == "/watchshop/"){
+        dohvati("kategorije.json",ispisKat)
+        dohvati("brendovi.json",ispisBrendova)
         dohvati("satovi.json",najnovijiProizvodi)
         dohvati("satovi.json",malaKartica)
         slider()
@@ -99,7 +101,7 @@ function ispisBrendova(nizBrendova){
         localStorage.setItem("cekiranoBrend", this.dataset.brendid);
         filterChange();
     });*/
-    dohvati("kategorije.json",ispisKat)
+    //dohvati("kategorije.json",ispisKat)
 }
 //${brojProizvoda(br.id)}
 
@@ -141,8 +143,8 @@ function proizvodiIspis(nizProizvoda,idBloka){
     let ispis=""
     for(let proizvod of nizProizvoda){
         ispis+=`<div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="product-image-wrapper">
-            <div class="single-products">
+        <div class="product-image-wrapper" >
+            <div class="single-products" >
                 <div class="productinfo text-center">
                     <img src="${proizvod.slika.src}" alt="${proizvod.slika.alt}" />
                     <div class="stara">
@@ -162,7 +164,7 @@ function proizvodiIspis(nizProizvoda,idBloka){
                <div id="kolekcijaOznaka">
                ${obradaKolekcije(proizvod.kolekcijaId)}
                </div> 
-               <div class="product-overlay mesto">
+               <div class="product-overlay mesto" data-id = "${proizvod.id}">
                     <div class="overlay-content">
                     </div>
                 </div>
@@ -171,8 +173,9 @@ function proizvodiIspis(nizProizvoda,idBloka){
     </div>`  
     } 
     document.querySelector(idBloka).innerHTML=ispis
-    dohvati("brendovi.json",ispisBrendova)
+    //dohvati("brendovi.json",ispisBrendova)
 }
+
 //obrada kartica
 function brojProizvoda(id){
     let filterprod = satoviLS.filter(el => el.brendId == id)
@@ -483,20 +486,26 @@ function proveraForme(){
     }
 }
 
+let id = 0;
+
 $(document).on("click",".mesto", function() {
+    id = $(this).data("id");
+    $(".modal-bg").html("");
     $(".modal-bg").css("visibility", "visible");
-    $(".zatvori").on("click", function() {
-        $(".modal-bg").css("visibility", "hidden");
-    })
+    dohvati('satovi.json',ispisiModal);
+    
 })
-/*dohvati('satovi.json',ispisiModal)
+$(document).on("click",".zatvori", function() {
+    console.log("454555")
+    $(".modal-bg").css("visibility", "hidden");
+})
 //modal 
 function ispisiModal(nizProizvoda){
-
     let ispis=""
     for(let p of nizProizvoda){
-      ispis +=`<div class="nes">
-        <div class="left1 col-sm-3">
+        if (p.id == id)
+      ispis +=`<div class="nes modal d-flex flex-row">
+        <div class="left1 col-sm-2">
             <div class="big-img">
             <img src="${p.slika.src}" alt="${p.slika.alt}" />
             </div>
@@ -554,8 +563,10 @@ function ispisiModal(nizProizvoda){
                 <button class="buy-btn">Buy now</button>
             </div>
         </div>
-    </div>`
+    </div>`;
     }
+    console.log(ispis)
+    $(".modal-bg").html(ispis);
 }
 
 function obradaSpecifikacije(specObj){
@@ -565,29 +576,7 @@ function obradaSpecifikacije(specObj){
         html += `<li>${objSpec.naziv}: ${objSpec.vrednost}</li>`
     }
     return html;
-}*/
-
-  
+}
 
 
-// 36 proizvoda
-
-// https://michalsnik.github.io/aos/
-
-/*$(".pogledaj").on("click", function() {
-    console.log("nesto")
-    //let id = $(this).dataset.satid;
-    //ispisiModal(id);
-})
-/*
-$("#zatvori").on("click", function() {
-    $(".modal-bg").css("visibiliy", "hidden");
-})*/
-
-
-/*function ispisiModal(id) {
-    let html = "";
-    // ispises sve
-    // $(".modal-bg").css("visibiliy", "visible");
-}*/
 
