@@ -38,7 +38,7 @@ window.onload=function(){
     console.log(url)
     brojProizvodaUKorpi()
 
-    if(url == "/watchshop/index.html" || url == "/"){
+    if(url == "/watchshop/index.html" || url == "/watchshop/"){
         dohvati("satovi.json",najnovijiProizvodi)
         dohvati("satovi.json",rasprodaja)
         dohvati("kategorije.json",ispisKat)
