@@ -679,7 +679,6 @@ vertisement {
   transition: visibility 0s opacity 0,5s;
 }
 .nes{
-  height: 70vh !important;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -688,8 +687,8 @@ vertisement {
   right: unset !important;
   top: unset !important;
   bottom: unset !important;
-
   width: fit-content;
+  padding: 15px;
   background-color: #ffffff;
 }
 .left1{
@@ -745,6 +744,15 @@ vertisement {
 }
 .table{
   border-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+#btnObrisi{
+  background-color: rgb(249, 60, 60);
+}
+#proizvodUKorpi{
+  font-size: 18px;
+  color: #04b995;
+  font-weight: 600;
 }
 .btn-box button{
   font-size: 16px;
@@ -757,6 +765,12 @@ vertisement {
 .btn-mm{
   background-color: #65C18C;
   margin-right: 20px;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px;
+  font-weight: bold;
+  font-size: 16px;
 }
 .buy-btn{
   background-color: #363432;
@@ -814,7 +828,6 @@ vertisement {
   background-color: #fff;
   color:#04b995;
   width: 50%;
-  /*height: 50%;*/
   display: flex;
   justify-content: space-around;
 }
@@ -1253,4 +1266,7 @@ vertisement {
 .in-view {
   opacity: 1;
   transform: translateY(0px) translateZ(0);
+}
+.total_area ul{
+  padding-left: 0px !important;
 }

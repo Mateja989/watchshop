@@ -57,7 +57,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"12"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -97,7 +97,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"12"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -137,7 +137,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"36"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -217,7 +217,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"12"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -257,7 +257,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"24"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -297,7 +297,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"18"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -337,7 +337,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"6"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -377,7 +377,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"24"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -400,7 +400,7 @@
         "dostupnost":true
     },
     {
-        "id":11,
+        "id":35,
         "naziv":"Armani Emporio",
         "kolekcijaId":0,
         "datum":"2020-10-25",
@@ -500,7 +500,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"18"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -580,7 +580,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"32"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -623,7 +623,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"16"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -703,7 +703,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"36"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -743,7 +743,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"6"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -783,7 +783,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"12"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -866,7 +866,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"14"
             },
             {
                 "naziv":"Kućište - materijal",
@@ -906,7 +906,7 @@
         "specifikacije":[
             {
                 "naziv":"Garancija",
-                "vrednost":"25"
+                "vrednost":"12"
             },
             {
                 "naziv":"Kućište - materijal",
