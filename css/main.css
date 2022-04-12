@@ -864,7 +864,10 @@ vertisement {
 #do_action {
   margin-bottom: 50px;
 }
-
+#advertisement{
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
 .breadcrumbs {
   position: relative;
 }
