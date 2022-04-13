@@ -31,21 +31,21 @@ window.onload=function(){
 
     brojProizvodaUKorpi()
 
-    if(url == "/index.html" || url == "/"){
+    if(url == "/watchshop/index.html" || url == "/watchshop/"){
         dohvati("satovi.json",najnovijiProizvodi)
         dohvati("satovi.json",rasprodaja)
         dohvati("kategorije.json",ispisKat)
         dohvati("brendovi.json",ispisBrendova)
         slider()
     }
-    if(url == "/shop.html"){
+    if(url == "/watchshop/shop.html"){
         dohvati("satovi.json",sviProizvodi)
         kreirajChb(brendovi,"#brend",'brendovi',".brendovi")
         kreirajChb(kategorije,"#kategorije",'kategorije',"#kategorije")
         kreirajChb(kolekcije,'#kolekcija','kolekcije','.kolekcije')
         
     }
-    if(url == "/checkout.html"){
+    if(url == "/watchshop/checkout.html"){
         validacijaPlacanja()
         ispisProizvodaZaKorpu()
         obrisiKorpu()
