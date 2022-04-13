@@ -25,31 +25,51 @@ window.onload=function(){
     var brendovi=vratiLS('nizBrendova')
     var kategorije=vratiLS('nizKategorija')
     var kolekcije=vratiLS('nizKolekcija')
+    
 
-    console.log(brendovi,kategorije,kolekcije)
+    //console.log(brendovi,kategorije,kolekcije)
 
     brojProizvodaUKorpi()
 
-    if(url == "/watchshop/index.html" || url == "/watchshop/"){
+    if(url == "/index.html" || url == "/"){
         dohvati("satovi.json",najnovijiProizvodi)
         dohvati("satovi.json",rasprodaja)
         dohvati("kategorije.json",ispisKat)
         dohvati("brendovi.json",ispisBrendova)
         slider()
     }
-    if(url == "/watchshop/shop.html"){
+    if(url == "/shop.html"){
         dohvati("satovi.json",sviProizvodi)
         kreirajChb(brendovi,"#brend",'brendovi',".brendovi")
         kreirajChb(kategorije,"#kategorije",'kategorije',"#kategorije")
         kreirajChb(kolekcije,'#kolekcija','kolekcije','.kolekcije')
+        
     }
-    if(url == "/watchshop/checkout.html"){
+    if(url == "/checkout.html"){
         validacijaPlacanja()
         ispisProizvodaZaKorpu()
         obrisiKorpu()
     }
 
 }
+
+
+dohvati("satovi.json", function(result){
+    skladistiLS('nizSatova',result)
+})
+dohvati("kolekcija.json", function(result){
+    skladistiLS('nizKolekcija',result)
+})
+dohvati("brendovi.json", function(result){
+    skladistiLS('nizBrendova',result)
+})
+dohvati("kategorije.json", function(result){
+    skladistiLS('nizKategorija',result)
+})
+
+    
+
+
 //slider na pocetnoj strani
 var headerCover=['images/home/banner-01.jpg','images/home/banner-02.jpg','images/home/banner-03.jpg']
 var headerDiv=document.getElementById("slider")
@@ -64,20 +84,6 @@ function slider(){
     i++;
     setTimeout('slider()',3500);
 }
-
-//smestanje u localstorage
-dohvati("satovi.json", function(result){
-    skladistiLS('nizSatova',result)
-})
-dohvati("kolekcija.json", function(result){
-    skladistiLS('nizKolekcija',result)
-})
-dohvati("brendovi.json", function(result){
-    skladistiLS('nizBrendova',result)
-})
-dohvati("kategorije.json", function(result){
-    skladistiLS('nizKategorija',result)
-})
 function filterPromeni() {
     dohvati("satovi.json",sviProizvodi);
 }
@@ -92,7 +98,7 @@ function ispisKat(nizKategorija){
                 </div>`
     }
     document.querySelector('.kategorije').innerHTML=ispis
-    skladistiLS('nizKategorija',nizKategorija)
+    //skladistiLS('nizKategorija',nizKategorija)
    /* $('.lista a').click(function() {
         localStorage.setItem("cekiranoKat", this.dataset.idkat);
         filterChange();
@@ -106,7 +112,7 @@ function ispisBrendova(nizBrendova){
     }
     ispis+=`</ul>`
     document.querySelector('#brendovi').innerHTML=ispis
-    skladistiLS('nizBrendova',nizBrendova)
+    //skladistiLS('nizBrendova',nizBrendova)
    /* $('.lista1 a').click(function() {
         localStorage.setItem("cekiranoBrend", this.dataset.brendid);
         filterChange();
