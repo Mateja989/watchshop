@@ -1,9 +1,14 @@
-﻿body {
+﻿*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+body {
   font-family: 'Roboto', sans-serif;
   position: relative;
   font-weight:400px;
 }
-
 ul li {
   list-style: none;
 }
@@ -34,11 +39,6 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   box-shadow: none;
 }
-
-.navbar-toggle {
-  background-color: #000;
-}
-
 a#scrollUp {
   bottom: 0px;
   right: 10px;
@@ -55,27 +55,7 @@ a#scrollUp i{
 /*************************
 *******Header CSS******
 **************************/
-.header_top {
-  background: none repeat scroll 0 0 #65C18C;
-}
 
-.contactinfo ul li:first-child{
-    margin-left: -15px;
-}
-.contactinfo ul li a{
-  font-size: 12px;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-}
-.contactinfo ul li a:hover{
-	background:inherit;
-}
-.social-icons ul li a {
-  border: 0 none;
-  border-radius: 0;
-  color: #fff;
-  padding:0px;
-}
 .chb{
     background-color: #FFFFFF;
     color: #696763;
@@ -114,15 +94,8 @@ a#scrollUp i{
 .header-middle .container .row .col-sm-8 {
 	padding-right:0;
 }
-#logo img{
-  margin-top: 20px;
-  padding-bottom: 20px;
-  width: 100%;
-  height: 50px;
-}
-#logo{
-  text-align: center;
-}
+
+
 #slider{
   position: relative;
   width: 100%;
@@ -136,37 +109,10 @@ a#scrollUp i{
   transition:all 2s;
   overflow: hidden;
 }
-.navigacija{
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 25px;
-}
-.navigacija li a{
-  font-size: 14px;
-  color:#fff;
-  text-transform: uppercase;
-  margin-left: 15px;
-  padding: 10px;
-}
-.navigacija li a:hover{
-  color: #04b995;
-}
-.activeLink{
-  padding-bottom: 3px;
-  border-bottom: 2px solid #04b995;
-}
+
+
 .header-color{background-color: rgba(29, 29, 29, 0.8);}
 
-#navigation{
-  position: fixed;
-  display: flex;
-  justify-content: space-around !important;
-  top:0;
-  height: 80px;
-  width: 100%;
-  z-index: 200;
-  background-color: rgba(29, 29, 29, 0.8);
-}
 .mm-margin{
   margin-top: 250px;
   margin-bottom: 250px;
@@ -224,10 +170,17 @@ a#scrollUp i{
 }
 .bg{
   text-align: center;
-  border-top: 1px solid #6d6d6d;
   width: 100%;
   color: #8f8f8f;
   padding-top: 5px;
+}
+#btnPosalji{
+  width: 100% !important;
+  background-color: #04b995;
+  color: #fff;
+  border: 0px;
+  padding: 5px;
+  border-radius: 5px;
 }
 .liD{
   padding-left: 0px;
@@ -423,11 +376,59 @@ h2.title:before{
   text-transform: uppercase;
 }
 
+#advertisement {
+  padding-bottom: 50px;
+}
+
+#advertisement img {
+  width: 100%;
+}
+
 .brands-name .nav-stacked li a:hover{
   background-color: #fff;
   color: #696763;
 }
-
+.color-white{
+  background-color: #434343 !important;
+  padding: 5px;
+  text-align: center;
+}
+.color-white h4{
+  color: #8C8C88;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0px;
+}
+#obavestenje{
+  font-size: 14px;
+  color: #6e6e6e;
+  margin-top: 3px;
+}
+.slika-autor,.tekst-autor{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.slika-autor{
+  width: 30%;
+  text-align: center;
+}
+.slika-autor img{
+  width: 60%;
+  border-radius: 5%;
+}
+.tekst-autor{
+  width: 65%;
+}
+.tekst-autor h5{
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+#autor{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 .shipping {
   background-color: #F2F2F2;
   margin-top: 40px;
@@ -516,7 +517,6 @@ h2.title {
  position:relative;
 }
 .nije{
-  background-color: #f5a7a7;
   color: #e63731;
   text-align: center;
   font-size: 18px;
@@ -863,10 +863,6 @@ vertisement {
 }
 #do_action {
   margin-bottom: 50px;
-}
-#advertisement{
-  margin-top: 10%;
-  margin-bottom: 5%;
 }
 .breadcrumbs {
   position: relative;
@@ -1264,6 +1260,9 @@ vertisement {
   margin-left: 10px;
   font-size: 14px
 }
+.start-page{
+  margin-top: 10%;
+}
 
 
 .in-view {
@@ -1272,4 +1271,170 @@ vertisement {
 }
 .total_area ul{
   padding-left: 0px !important;
+}
+
+
+/*novi meni*/
+nav{
+  height: 80px;
+  width: 100%;
+  background-color: rgba(29, 29, 29, 0.8);
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top:0;
+  z-index: 99;
+}
+label.logo{
+  text-align: left;
+}
+label.logo img{
+  margin-top: 25px;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 50px;
+}
+label #korpa{
+  margin-bottom: 5px;
+  position: absolute;
+}
+label#korpa a img{
+  margin-top: 15px;
+  padding-bottom: 20px;
+  width: 70%;
+  height: 70px;
+}
+nav ul{
+  margin-right: 40px;
+}
+nav li{
+  display: inline-block;
+  margin: 0 8px;
+  line-height: 80px;
+}
+nav a{
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  padding: 7px 10px;
+  border-radius: 5px;
+  text-decoration: none !important;
+}
+nav a:hover{
+   color: #04b995;
+}
+nav #icon{
+  margin-top: 20px;
+  cursor: pointer;
+  display: none;
+}
+#broj-korpa{
+  position: relative;
+  color: #fff !important;
+  top: -100%;
+  left: 60%;
+  background-color: #65C18C;
+  text-align: center;
+  width: 15px;
+  border-radius: 50%;
+}
+#icon div{
+  width: 35px;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+  margin: 6px 0;
+}
+
+@media(max-width:1048px){
+  label.logo{
+      font-size: 32px;
+      padding-left: 20px;
+  }
+  nav ul{
+      margin-right: 20px;
+  }
+  nav a{
+      font-size: 17px;
+  }
+}
+@media(max-width:909px){
+  nav #icon{
+      display: block;
+  }
+  nav ul{
+      position: fixed;
+      width: 100%;
+      background-color: rgba(29, 29, 29, 0.8);
+      left: -100%;
+      top:80px;
+      text-align: center;
+      transition: all .5s;
+  }
+  nav li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+  }
+  nav a{
+      font-size:20px;
+  }
+  nav ul.show{
+      left: 0;
+  }
+}
+@media(max-width:490px){
+  label.logo{
+    width: 50%;
+    padding: 0px;
+  }
+  #icon div{
+    width: 30px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0;
+  }
+  nav a{
+    font-size: 14px;
+  }
+  .start-page{
+    margin-top: 30%;
+  }
+}
+.mm-kontakt{
+  padding-bottom: 50px;
+}
+.social-networks{
+  overflow: hidden;
+  text-align: center;
+}
+
+.social-networks ul {
+  margin-top: -5px;
+  padding: 0;
+  display: inline-block;
+}
+
+.social-networks ul li {
+  float: left;
+  text-decoration: none;
+  list-style: none;
+  margin-right: 20px;
+}
+
+.social-networks ul li:last-child{
+  margin-right: 0;
+}
+
+.social-networks ul li a {
+  color: #999;
+  font-size: 25px;
+}
+
+.contact-info .social-networks ul li a i{
+  background: none;
+}
+
+.contact-info .social-networks ul li a:hover{
+  color: #3D56B2;
 }

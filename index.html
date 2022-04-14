@@ -15,26 +15,26 @@
 </head><!--/head-->
 <body >
 	<header class="bg-cover" id="slider">
-      <div class="mx-auto fixed-top" id="navigation">
+      <div class="mx-auto fixed-top">
         <div class="container-fluid">
-			<div class="row" id="navigation-row">
-				<div id="logo" class="col-sm-4 mt-4">
-				  <a href="index.html"><img src="images/home/watchshop-logoV31.svg" alt=""/></a>
-				</div>
-				<div class="col-sm-8">
-					<ul class="navigacija">
-						<li><a href="index.html" class="activeLink">Početna</a></li>
-						<li><a href="shop.html">Proizvodi</a></li>
-						<li><a href="checkout.html">Kontakt</a></li>
-						<li><a href="">Autor</a></li>
-						<li><a href="checkout.html">Korpa
-							<span id="broj-korpa"></span>
-						</a></li>
-					</ul>
-				</div>
-			</div>
+		<nav>
+			<label class="logo">
+			  <a href="index.html"><img src="images/home/watchshop-logoV31.svg" alt=""/></a>
+			</label>
+			<ul id="listaNav">
+			</ul>
+			<label id="icon">
+				<div></div>
+				<div></div>
+				<div></div>
+			</label>
+			<label id="korpa">
+				<a href="checkout.html"><img src="images/home/cart1.png" alt="korpa"/></a>
+				<p id="broj-korpa"></p>
+			</label>
+		  </nav>
 		</div>
-      </div>-->
+      </div>
       <div class="container mm-z">
         <div class="row">
           <div class="col-12 text-center mm-margin">
@@ -87,8 +87,25 @@
 					</div>
 				</div>
 			</div>
-		</div>	
-		
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="category-tab"><!--category-tab-->
+					<div class="color-white">
+						<h4>Autor</h4>
+					</div>
+					<div id="autor">
+						<div class="slika-autor">
+							<img src="images/home/ja.jpeg" alt=""/>
+						</div>
+						<div class="tekst-autor">
+							<h5>Mateja Mastelica 73/20</h5>
+							<p>My name is Mateja Mastelica. I was born in Belgrade, where I finished primary and secondary school.I started working and getting interested in entrepreneurship, and as in every beginning "I was looking for myself", and then for the first time I came in contact with programming and the web, so after a year I decided to enroll in Higher ICT school, exclusively for Web Programming, because my area of interest is Web technology and digital marketing in E-commerce. I enjoy making websites and I am very enthuastic of my profession. I'm learning new things every day, and i do my best to maximize my knowledge about Web development,marketing and SEO. I work with passion and I'm always trying to make a friendly relationship with my clients.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
 	</section>
 	<footer id="footer"><!--Footer-->
 		<div class="footer-bottom">
@@ -98,7 +115,6 @@
 						<li><a href="#">Dokumentacija</a></li>
 						<li><a href="#">main.js</a></li>
 						<li><a href="#">sitemap</a></li>
-						<li><a href="#">autor</a></li>
 					</ul>
 					<p><img src="images/home/watchshop-logoV31.svg" class="pull-right slika"></p>
 				</div>

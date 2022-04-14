@@ -22,6 +22,8 @@ function skladistiLS(naziv,data){
 window.onload=function(){
     let url = window.location.pathname;
 
+    navigacioniMeni()
+
     var brendovi=vratiLS('nizBrendova')
     var kategorije=vratiLS('nizKategorija')
     var kolekcije=vratiLS('nizKolekcija')
@@ -31,21 +33,21 @@ window.onload=function(){
 
     brojProizvodaUKorpi()
 
-    if(url == "/watchshop/index.html" || url == "/watchshop/"){
+    if(url == "/index.html" || url == "/"){
         dohvati("satovi.json",najnovijiProizvodi)
         dohvati("satovi.json",rasprodaja)
         dohvati("kategorije.json",ispisKat)
         dohvati("brendovi.json",ispisBrendova)
         slider()
     }
-    if(url == "/watchshop/shop.html"){
+    if(url == "/shop.html"){
         dohvati("satovi.json",sviProizvodi)
         kreirajChb(brendovi,"#brend",'brendovi',".brendovi")
         kreirajChb(kategorije,"#kategorije",'kategorije',"#kategorije")
         kreirajChb(kolekcije,'#kolekcija','kolekcije','.kolekcije')
         
     }
-    if(url == "/watchshop/checkout.html"){
+    if(url == "/checkout.html"){
         validacijaPlacanja()
         ispisProizvodaZaKorpu()
         obrisiKorpu()
@@ -53,6 +55,27 @@ window.onload=function(){
 
 }
 
+
+function navigacioniMeni(){
+    dohvati('nav.json',ispisNavigacija)
+
+
+    //dugme za hamburger
+    $(document).ready(function(){
+        $('#icon').click(function(){
+            $('ul').toggleClass('show')
+        })
+    })
+}
+
+//funkcija za ispis navigacije
+function ispisNavigacija(nizLinkova){
+    let ispis=''
+    for(let link of nizLinkova){
+        ispis+=`<li><a href="${link.href}">${link.naziv}</a></li>`
+    }
+    document.querySelector('#listaNav').innerHTML=ispis
+}
 
 dohvati("satovi.json", function(result){
     skladistiLS('nizSatova',result)
@@ -431,6 +454,7 @@ function dodajUKorpu(){
         let proizvodi=[]
         proizvodi[0]={
             id:id,
+            kolicina:1
         }
         skladistiLS('proizvodiKorpa',proizvodi)
         document.querySelector('#proizvodUKorpi').innerHTML='Proizvod je uspešno dodat u korpu'
@@ -438,13 +462,13 @@ function dodajUKorpu(){
     
     function dodatUKorpu(){
         return proizvodiIzKorpe.filter(proizvod => proizvod.id == id).length
-    
     }
 
     function dodajNoviProizvod(){
         let proizvodiLS=vratiLS('proizvodiKorpa')
         proizvodiLS.push({
             id:id,
+            kolicina:1
         })
         skladistiLS('proizvodiKorpa',proizvodiLS)
         document.querySelector('#proizvodUKorpi').innerHTML='Proizvod je uspešno dodat u korpu'
@@ -453,26 +477,30 @@ function dodajUKorpu(){
 
 function brojProizvodaUKorpi(){
     var proizvodiKorpa=vratiLS('proizvodiKorpa')
-    let broj
-    let ispis=''
     if(proizvodiKorpa!=null){
         broj=proizvodiKorpa.length
-        document.querySelector('#broj-korpa').innerHTML='Nesto'
+        document.querySelector('#broj-korpa').innerHTML=broj
     }else{
-        document.querySelector('#broj-korpa').innerHTML='Nista'
+        document.querySelector('#broj-korpa').innerHTML='0'
     }
 }
 
 function ispisProizvodaZaKorpu(){
     var proizvodiKorpa=vratiLS('proizvodiKorpa')
     if(proizvodiKorpa==null){
-        document.querySelector('#ispisSadrzajaKorpe').innerHTML=`<h4 class="text-center">Korpa je prazna</h4>`
+        ispisPraznaKorpa()
     }
     else{
         IspisiSadrzajKorpe()
     }
 }
-
+//funkcija za ispis za obavestenje za praznu korpu
+function ispisPraznaKorpa(){
+    document.querySelector('#ispisSadrzajaKorpe').innerHTML=''
+        document.querySelector('#praznaKorpa').innerHTML=`
+        <h4 class="text-center">Vaša korpa je trenutno prazna.</h4>
+        <p class="text-center">Pogledajte naš asortiman <a href="shop.html">ovde.</a></p>`
+}
 function IspisiSadrzajKorpe(){
     var satoviIzKorpe=vratiLS('proizvodiKorpa')
     var sviProizvodi=vratiLS('nizSatova')
@@ -481,12 +509,14 @@ function IspisiSadrzajKorpe(){
     zaPrikaz=sviProizvodi.filter(p => {
         for(let proizvod of satoviIzKorpe){
             if(p.id == proizvod.id){
-                p.kolicina=1
+                p.kolicina=proizvod.kolicina
                 return true
             }
         }
         return false
     })
+
+    console.log(zaPrikaz)
     tabela(zaPrikaz)
 }
 
@@ -504,13 +534,11 @@ function tabela(niz){
         </td>
         <td class="cart_quantity">
             <div class="cart_quantity_button">
-                <a class="cart_quantity_up" href=""> + </a>
-                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                <a class="cart_quantity_down" href=""> - </a>
+                <input class="cart_quantity_input" type="number" name="quantity" id="kolicina" value="1">
             </div>
         </td>
-        <td class="cart_total">
-            <p>RSD 12.650,00</p>
+        <td class="cart_total" id="ukupnaCena">
+            <p>${proizvod.cena.nova}</p>
         </td>
         <td class="cart_delete">
             <a class="cart_quantity_delete brisiIzKorpe"  data-idproizvoda="${proizvod.id}" href=""><i class="fa fa-times"></i></a>
@@ -519,6 +547,8 @@ function tabela(niz){
     }
     document.querySelector('#ispisSadrzajaKorpe').innerHTML=ispis
 }
+
+
 
 //brisanje jednog proizvoda iz korpe
 $(document).on("click",".brisiIzKorpe", function(e) {
@@ -543,7 +573,7 @@ $(document).on("click",".brisiIzKorpe", function(e) {
     }
     else{
         localStorage.removeItem('proizvodiKorpa')
-        document.querySelector('#ispisSadrzajaKorpe').innerHTML=`<h4 class="text-center">Korpa je prazna</h4>`
+        ispisPraznaKorpa()
         brojProizvodaUKorpi()
     }
     

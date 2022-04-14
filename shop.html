@@ -14,49 +14,48 @@
     <script src="https://kit.fontawesome.com/f135de3b64.js" crossorigin="anonymous"></script> 
     <link rel="shortcut icon" href="images/home/watch.ico">
 </head><!--/head-->
-<body>	
-	
-<div class="mx-auto fixed-top" id="navigation">
-        <div class="container-fluid">
-			<div class="row" id="navigation-row">
-				<div id="logo" class="col-sm-5 mt-4">
+<body>
+	<header>
+		<div class="mx-auto fixed-top">
+			<div class="container-fluid">
+			<nav>
+				<label class="logo">
 				  <a href="index.html"><img src="images/home/watchshop-logoV31.svg" alt=""/></a>
-				</div>
-				<div class="col-sm-7">
-					<ul class="navigacija">
-						<li><a href="" class="activeLink">Početna</a></li>
-						<li><a href="">Proizvodi</a></li>
-						<li><a href="checkout.html">Kontakt</a></li>
-						<li><a href="">Autor</a></li>
-						<li><a href="checkout.html">Korpa
-							<span id="broj-korpa"></span>
-						</a></li>
-					</ul>
-				</div>
-				<div class="col-sm-4">
-					<ul class="korpaMenu">
-					
-					</ul>
-				</div>
+				</label>
+				<ul id="listaNav">
+				</ul>
+				<label id="icon">
+					<div></div>
+					<div></div>
+					<div></div>
+				</label>
+				<label id="korpa">
+					<a href="checkout.html"><img src="images/home/cart1.png" alt="korpa"/></a>
+					<p id="broj-korpa"></p>
+				</label>
+			  </nav>
 			</div>
-		</div>
-    </div>
+		  </div>
+	</header>	
 	<div class="modal-bg">
 	</div>
-	<div id="advertisement">
-		<div class="container mt-5">
-			<div class="row">
-				<div class="nee">
-					<ul class="d-flex stay">
-						<li>Početna</li>
-						<span><li>/</li></span>
-						<li>Proizvodi</li>
-					</ul>
-				</div>
-				<h1 class="naslovC">Proizvodi</h1>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="start-page">
+				<ul class="d-flex stay">
+					<li>Početna</li>
+					<span><li>/</li></span>
+					<li>Proizvodi</li>
+				</ul>
 			</div>
+			<h1 class="naslovC">Proizvodi</h1>
 		</div>
 	</div>
+	<section id="advertisement">
+		<div class="container">
+			<img src="images/shop/advertisement.jpg" alt="" />
+		</div>
+	</section>
 	<section>
 		<div class="container">
 			<div class="row">
@@ -119,7 +118,6 @@
 						<li><a href="#">Dokumentacija</a></li>
 						<li><a href="#">main.js</a></li>
 						<li><a href="#">sitemap</a></li>
-						<li><a href="#">autor</a></li>
 					</ul>
 					<p><img src="images/home/watchshop-logoV31.svg" class="pull-right slika"></p>
 				</div>

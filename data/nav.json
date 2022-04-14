@@ -8,15 +8,11 @@
         "naziv":"Proizvodi"
     },
     {
-        "href":"checkout.html",
+        "href":"contact-us.html",
         "naziv":"Kontakt"
     },
     {
         "href":"https://mateja989.github.io/matejamastelicaportfolio.github.io/",
         "naziv":"Autor"
-    },
-    {
-        "href":"index.html",
-        "naziv":"Dokumentacija"
     }
 ]

@@ -14,31 +14,28 @@
 		<link rel="shortcut icon" href="images/home/watch.ico">
 	</head><!--/head-->
 <body>
-	<div class="mx-auto fixed-top" id="navigation">
-        <div class="container-fluid">
-			<div class="row" id="navigation-row">
-				<div id="logo" class="col-sm-3 mt-4">
+	<header>
+		<div class="mx-auto fixed-top">
+			<div class="container-fluid">
+			<nav>
+				<label class="logo">
 				  <a href="index.html"><img src="images/home/watchshop-logoV31.svg" alt=""/></a>
-				</div>
-				<div class="col-sm-5">
-					<ul class="navigacija">
-						<li><a href="index.html" class="activeLink">Početna</a></li>
-						<li><a href="">Proizvodi</a></li>
-						<li><a href="checkout.html">Kontakt</a></li>
-						<li><a href="">Autor</a></li>
-						<li><a href="checkout.html">Korpa
-							<span id="broj-korpa"></span>
-						</a></li>
-					</ul>
-				</div>
-				<div class="col-sm-4">
-					<ul class="korpaMenu">
-					
-					</ul>
-				</div>
+				</label>
+				<ul id="listaNav">
+				</ul>
+				<label id="icon">
+					<div></div>
+					<div></div>
+					<div></div>
+				</label>
+				<label id="korpa">
+					<a href="checkout.html"><img src="images/home/cart1.png" alt="korpa"/></a>
+					<p id="broj-korpa"></p>
+				</label>
+			  </nav>
 			</div>
-		</div>
-    </div>
+		  </div>
+	</header>	
 	<div class="container mt-5 strana">
 		<div class="row">
 			<div class="nee">
@@ -71,6 +68,8 @@
 					<tbody id="ispisSadrzajaKorpe">
 					</tbody>
 				</table>
+				<div id="praznaKorpa">
+				</div>
 			</div>
 		</div>
 		<div class="container">
@@ -78,7 +77,7 @@
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="shopper-info">
-							<h4>Korisnik</h4>
+							<h4>Korisnik <br> <span id="obavestenje">(za kupovinu mora biti ulogovan)</span></h4>
 							<form id="korisnikForma">
 								<input type="text" placeholder="Korisničko ime *" id="korisnik">
 								<p class="nevidljiv">Ne postoji korisnik sa ovim imenom u bazi</p>
