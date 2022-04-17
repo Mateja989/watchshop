@@ -58,19 +58,24 @@
 	    				<div class="status alert alert-success" style="display: none"></div>
 				    	<form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
 				            <div class="form-group col-md-6">
-				                <input type="text" name="name" class="form-control" required="required" placeholder="Ime i prezime">
+				                <input type="text" name="name" id="imePrezime" class="form-control" required="required" placeholder="Ime i prezime">
+								<p class="nevidljiv">Ime mora biti uneto u formatu:Mitar Mitrović...</p>
 				            </div>
 				            <div class="form-group col-md-6">
-				                <input type="email" name="email" class="form-control" required="required" placeholder="Email">
+				                <input type="email" name="email" id="mailAdresa" class="form-control" required="required" placeholder="Email">
+								<p class="nevidljiv">Mejl adresa ne odgovara formatu</p>
 				            </div>
 				            <div class="form-group col-md-12">
-				                <input type="text" name="subject" class="form-control" required="required" placeholder="Naslov">
+				                <input type="text" name="subject" id="naslov" class="form-control" required="required" placeholder="Naslov">
+								<p class="nevidljiv">Naslov mora da sadrži minimum 5,a maksimum 20 slovnih karaktera</p>
 				            </div>
 				            <div class="form-group col-md-12">
-				                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Vasa poruka"></textarea>
+				                <textarea name="message" id="poruka" required="required" class="form-control" rows="8" placeholder="Vasa poruka"></textarea>
+								<p class="nevidljiv">Poruka mora da sadrži minimum 20,a maksimum 255 slovnih karaktera</p>
 				            </div>   
 							<div class="form-group col-md-12">
 				                <input type="button" id="btnPosalji"  value="Pošalji">
+								<p class="nevidljiv uspeh">Uspešno ste poslali poruku</p>
 				            </div>                          
 				        </form>
 	    			</div>

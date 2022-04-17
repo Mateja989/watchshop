@@ -59,9 +59,9 @@
 					<thead>
 						<tr class="cart_menu">
 							<td class="image">Proizvod</td>
-							<td class="price">Cena</td>
+							<td class="description">Opis</td>
 							<td class="quantity">Kolicina</td>
-							<td class="total">Ukupna cena</td>
+							<td class="price">Cena</td>
 							<td>Ukloni</td>
 						</tr>
 					</thead>
@@ -104,15 +104,15 @@
 
 									</select>
 									<p class="nevidljiv">Grad mora biti izabran</p>
-									<input type="text" placeholder="Postanski Broj *" id="posta" readonly>
+									<input type="text" placeholder="Poštanski Broj *" id="posta" readonly>
 									<p class="nevidljiv">Automatsko popunjavanje</p>
 									<input type="text" placeholder="Ulica *" id="ulica" disabled>
 									<p class="nevidljiv">Ulica mora biti uneta</p>
 									<input type="text" placeholder="Broj telefona *" id="telefon" disabled>
 									<p class="nevidljiv">Broj telefona mora biti unet u formatu 060/1234-5678</p>
 									<h5>Način plaćanja: </h5>
-									<input type="radio" name="nacinPlacanja" id="kartica" disabled>Karticom
-									<input type="radio" name="nacinPlacanja" id="pouzece" checked disabled>Pouzećem
+									<input type="radio" name="nacinPlacanja" class="nacinPlacanja" id="kartica" disabled value="Kartica">Karticom
+									<input type="radio" name="nacinPlacanja" class="nacinPlacanja" id="pouzece" disabled value="Pouzece">Pouzećem
 									<p class="nevidljiv">Mora biti izabran način plaćanja</p>
 									<input type="text" placeholder="Broj kartice *" class="nevidljiv" id="karticaBroj" disabled>
 									<p class="nevidljiv">Broj kartice je obavezan i zahteva 17 cifara</p>
@@ -125,10 +125,9 @@
 							<h4>Informacije o kupovini</h4>
 							<div class="total_area">
 								<ul id="kupovina-info">
-									<li>Cena <span>$59</span></li>
 									<li>PDV <span>Uračunat</span></li>
 									<li>Poštarina <span>Besplatna</span></li>
-									<li>Ukupno <span>$61</span></li>
+									<li>Ukupno <span class="totalnaCena"></span></li>
 								</ul>
 							</div>
 							<input type="button" id="btnObrisi" class="btn btn-primary" value="Obriši celu korpu">

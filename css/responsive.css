@@ -538,3 +538,170 @@ ul.sub-menu{
 }
 
 }
+@media(max-width:915px){
+	.slika-autor{
+	  width: 100% !important;
+	}
+	.slika-autor img{
+	  width: 250px;
+	  height: 250px;
+	}
+	.tekst-autor{
+	  width: 100%;
+	  text-align: center;
+	}
+	nav{
+	  justify-content: center !important;
+	}
+	label.logo{
+	  margin-right: 350px !important;
+	}
+  }
+  @media(max-width:715px){
+	  label.logo{
+		margin-right: 200px !important;
+	  }
+  }
+  @media(max-width:555px){
+	label.logo{
+	  margin-right: 100px !important;
+	}
+	.slika-autor img{
+	  width: 150px;
+	  height: 150px;
+	}
+	.tekst-autor{
+	  font-size: 14px !important;
+	  text-align: center;
+	}
+	label#korpa img{
+	  width: 60% !important;
+	  height: 70px !important;
+	}
+  }
+
+@media(max-width:610px){
+	.mm-margin h2{
+		padding-top: 0px !important;
+		font-size: 24px;
+	}
+	.mm-margin p{
+		font-size: 16px;
+	}
+	.mm-margin button{
+		margin-bottom: 10px !important;
+		font-size: 14px !important;
+	}
+	#slider{
+		height: 650px;
+	}
+	.nes{
+	  width: 80%;
+	}
+	.left1{
+	  width: 100%;
+	  text-align: center;
+	}
+	.left1 img{
+	  width: 200px;
+	  height: 200px;
+	}
+	.url{
+	  font-size: 12px;
+	}
+	.zatvori img{
+	  height: 10px;
+	  width: 10px;
+	}
+	.right{
+	  width: 100%;
+	  text-align: center;
+	}
+	.pname{
+	  font-size: 16px;
+	  margin-top: 5px;
+	}
+	.price1{
+	  text-align: center;
+	  padding: 0px;
+	  font-size: 14px;
+	}
+	.spec table thead{
+	  text-align: center;
+	}
+	.btn-mm{
+	  width: 100%;
+	  margin: 0px !important;
+	  padding: 5px !important;
+	  font-size: 12px !important;
+	}
+  }
+  @media(max-width:510px){
+	.spec table {
+	  font-size: 12px;
+	}
+  }
+  @media(max-width:400px){
+	.left1 {
+	  width: 100%;
+	}
+	.right{
+	  width: 100%;
+	}
+  }
+
+  @media(max-width:1048px){
+	label.logo{
+		font-size: 32px;
+		padding-left: 20px;
+	}
+	nav ul{
+		margin-right: 20px;
+	}
+	nav a{
+		font-size: 17px;
+	}
+  }
+  @media(max-width:909px){
+	nav #icon{
+		display: block;
+	}
+	nav ul{
+		position: fixed;
+		width: 100%;
+		background-color: rgba(29, 29, 29, 0.8);
+		left: -100%;
+		top:80px;
+		text-align: center;
+		transition: all .5s;
+	}
+	nav li{
+		display: block;
+		margin: 50px 0;
+		line-height: 30px;
+	}
+	nav a{
+		font-size:20px;
+	}
+	nav ul.show{
+		left: 0;
+	}
+  }
+  @media(max-width:490px){
+	label.logo{
+	  width: 50%;
+	  padding: 0px;
+	}
+	#icon div{
+	  width: 30px;
+	  height: 5px;
+	  background-color: rgb(255, 255, 255);
+	  margin: 6px 0;
+	}
+	nav a{
+	  font-size: 14px;
+	}
+	.start-page{
+	  margin-top: 30%;
+	}
+  }

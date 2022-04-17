@@ -18,6 +18,9 @@ function vratiLS(name){
 function skladistiLS(naziv,data){
     localStorage.setItem(naziv,JSON.stringify(data))
 }
+function obrisiLS(naziv){
+    localStorage.removeItem(naziv)
+}
 //pocetak
 window.onload=function(){
     let url = window.location.pathname;
@@ -45,12 +48,17 @@ window.onload=function(){
         kreirajChb(brendovi,"#brend",'brendovi',".brendovi")
         kreirajChb(kategorije,"#kategorije",'kategorije',"#kategorije")
         kreirajChb(kolekcije,'#kolekcija','kolekcije','.kolekcije')
+        resetujFilter()
         
     }
     if(url == "/watchshop/checkout.html"){
         validacijaPlacanja()
         ispisProizvodaZaKorpu()
         obrisiKorpu()
+        ukupnaCifra()
+    }
+    if(url=="/watchshop/contact-us.html"){
+        kontaktForma()
     }
 
 }
@@ -116,37 +124,48 @@ function ispisKat(nizKategorija){
     for(let kat of nizKategorija){
         ispis +=`<div class="panel panel-default">
                         <div class="panel-heading">
-                    <h4 class="panel-title lista"><a href="shop.html" data-idkat="${kat.id}">${kat.naziv}</a></h4>
+                    <h4 class="panel-title listaKat"><a href="shop.html" data-idkat="${kat.id}">${kat.naziv}</a></h4>
                 </div>
                 </div>`
     }
     document.querySelector('.kategorije').innerHTML=ispis
-    //skladistiLS('nizKategorija',nizKategorija)
-   /* $('.lista a').click(function() {
-        localStorage.setItem("cekiranoKat", this.dataset.idkat);
-        filterChange();
-    });*/
+    $('.listaKat a').click(function() {
+        skladistiLS("cekiranoKat", this.dataset.idkat);
+        filterPromeni()
+    });
 }
 //brendovi pocetna
 function ispisBrendova(nizBrendova){
     let ispis=`<ul class="nav nav-pills nav-stacked">`
     for(let br of nizBrendova){
-        ispis+=`<li class="lista1"><a href="shop.html" data-brendid="${br.id}"> <span class="pull-right">(${brojProizvoda(br.id)})</span>${br.naziv}</a></li>`
+        ispis+=`<li class="listaBrend"><a href="shop.html" data-brendid="${br.id}"> <span class="pull-right">(${brojProizvoda(br.id)})</span>${br.naziv}</a></li>`
     }
     ispis+=`</ul>`
     document.querySelector('#brendovi').innerHTML=ispis
-    //skladistiLS('nizBrendova',nizBrendova)
-   /* $('.lista1 a').click(function() {
-        localStorage.setItem("cekiranoBrend", this.dataset.brendid);
-        filterChange();
-    });*/
+    $('.listaBrend a').click(function() {
+        skladistiLS("cekiranoBrend", this.dataset.brendid);
+        filterPromeni()
+    });
+}
+
+//funckija za resetovanje filtera
+function resetujFilter(){
+    document.querySelector('#resetFilter').addEventListener('click',function(){
+        document.querySelector('#ddlSortiranje').value="0"
+        document.querySelector('#pretraga').value=""
+        $('input[type="checkbox"]').prop('checked',false)
+        $('#svi').prop('checked',true)
+        obrisiLS('cekiranoKat')
+        obrisiLS('cekiranoBrend')
+        filterPromeni()
+    })
 }
 
 //ispis proizvoda na shop strani
 function sviProizvodi(nizProizvoda){
-    nizProizvoda = filtriraj(nizProizvoda,'input[class="kategorije"]:checked');
-    nizProizvoda = filtriraj(nizProizvoda,'input[class="brendovi"]:checked');
-    nizProizvoda = filtriraj(nizProizvoda,'input[class="kolekcije"]:checked');
+    nizProizvoda = filtriraj(nizProizvoda,'input[class="kategorije"]:checked',"cekiranoKat");
+    nizProizvoda = filtriraj(nizProizvoda,'input[class="brendovi"]:checked',"cekiranoBrend");
+    nizProizvoda = filtriraj(nizProizvoda,'input[class="kolekcije"]:checked',"cekiranoKolekcije");
     nizProizvoda=sortiraj(nizProizvoda)
     nizProizvoda=pretragaPoImenuISifri(nizProizvoda)
     nizProizvoda=dostupnostArtikla(nizProizvoda)
@@ -293,30 +312,56 @@ function kreirajChb(niz,id,klasa,svi){
     })
 }
 
+//funkcija za cekiranje chb na osnovu klika sa pocetne strane
+function cekirajIzLocalStorage(klasa,nazivLS){
+    var cekiranoIndex=vratiLS(nazivLS)
+    var cekboksovi=document.querySelectorAll(klasa)//klasa
+    if(cekiranoIndex!=null){
+        for(let boks of cekboksovi){
+            if(boks.value==cekiranoIndex){
+                boks.setAttribute('checked',true)
+                obrisiLS(nazivLS)
+                filterPromeni()
+                break
+            }
+        }
+    }
+}
+
 //funkcija za filtriranje proizvoda na shop strani
-function filtriraj(nizProizvoda,selektor) {
+function filtriraj(nizProizvoda,selektor,nazivLS) {
     const selektovani = document.querySelectorAll(selektor)
     let id = []
+
     
+    if(nazivLS=='cekiranoKat'){
+        cekirajIzLocalStorage('.kategorije',nazivLS)
+    }
+    if(nazivLS=='cekiranoBrend'){
+        cekirajIzLocalStorage('.brendovi',nazivLS)
+    }
+    
+
     selektovani.forEach(x => {
-        id.push(Number(x.value))
-    })
-    if(id.length){
-        if(selektor=='input[class="kategorije"]:checked'){
-            return nizProizvoda.filter(proizvod => id.includes(proizvod.kategorijaId))
-        }
-        else if(selektor=='input[class="brendovi"]:checked'){
-            return nizProizvoda.filter(proizvod => id.includes(proizvod.brendId))  
+            id.push(Number(x.value))
+        })
+
+        if(id.length){
+            if(selektor=='input[class="kategorije"]:checked'){
+                return nizProizvoda.filter(proizvod => id.includes(proizvod.kategorijaId))
+            }
+            else if(selektor=='input[class="brendovi"]:checked'){
+                return nizProizvoda.filter(proizvod => id.includes(proizvod.brendId))  
+            }
+            else{
+                return nizProizvoda.filter(proizvod => id.includes(proizvod.kolekcijaId))  
+            }
         }
         else{
-            return nizProizvoda.filter(proizvod => id.includes(proizvod.kolekcijaId))  
+            return nizProizvoda
         }
+
     }
-    else{
-        return nizProizvoda
-    }
-    
-}
 //funkcija za sortiranje na shop strani
 function sortiraj(nizProizvoda){
     document.querySelector("#ddlSortiranje").addEventListener('change',filterPromeni);
@@ -377,7 +422,7 @@ function ispisiModal(nizProizvoda){
                 <div class="zatvori"><img src="images/home/close.png"/></div>
             </div>
             <div class="pname">${p.naziv}</div>
-            <div class="price">${p.cena.nova}</div>
+            <div class="price1">${p.cena.nova},00 RSD</div>
             <div class="spec">
                 <table>
                     <thead>
@@ -475,6 +520,14 @@ function dodajUKorpu(){
     }
 }
 
+function ukupnaCifra(){
+    var korpaProizvodi=vratiLS('proizvodiKorpa')
+    if(korpaProizvodi == null){
+        document.querySelector('.totalnaCena').innerHTML="0,00RSD"
+    }
+}
+
+
 function brojProizvodaUKorpi(){
     var proizvodiKorpa=vratiLS('proizvodiKorpa')
     if(proizvodiKorpa!=null){
@@ -515,38 +568,43 @@ function IspisiSadrzajKorpe(){
         }
         return false
     })
-
-    console.log(zaPrikaz)
     tabela(zaPrikaz)
 }
 
 //funkcija za kreiranje tabele za proizvode iz korpe
 function tabela(niz){
     let ispis=''
+    var ukupna=0
     for(let proizvod of niz){
         ispis+=`<tr>
-        <td class="cart_product">
-            <a href=""><img src="${proizvod.slika.src}" alt="${proizvod.slika.alt}"></a>
-            <h4><a href="">${proizvod.naziv}</a></h4>
+        <td class="img_cart">
+            <img src="${proizvod.slika.src}" alt="${proizvod.slika.alt}"/>
         </td>
-        <td class="cart_price">
-            <p>RSD ${proizvod.cena.nova},00</p>
-        </td>
+        <td class="cart_description">
+			<h4><a href="">${proizvod.naziv}</a></h4>
+			<p>Šifra artikla: ${proizvod.sifraArtikla}</p>
+		</td>
         <td class="cart_quantity">
-            <div class="cart_quantity_button">
-                <input class="cart_quantity_input" type="number" name="quantity" id="kolicina" value="1">
-            </div>
-        </td>
-        <td class="cart_total" id="ukupnaCena">
-            <p>${proizvod.cena.nova}</p>
+								<div class="cart_quantity_button">
+									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" readonly size="2">
+								</div>
+							</td>
+        <td class="cart_total price1" >
+            <p>${proizvod.cena.nova},00 RSD</p>
         </td>
         <td class="cart_delete">
             <a class="cart_quantity_delete brisiIzKorpe"  data-idproizvoda="${proizvod.id}" href=""><i class="fa fa-times"></i></a>
         </td>
     </tr>`
+    ukupna+=proizvod.cena.nova
     }
+    if(ukupna){
+        document.querySelector('.totalnaCena').innerHTML=`${ukupna},00RSD`
+        console.log('rado')
+    } 
     document.querySelector('#ispisSadrzajaKorpe').innerHTML=ispis
 }
+
 
 
 
@@ -570,9 +628,10 @@ $(document).on("click",".brisiIzKorpe", function(e) {
     if(noviNizProizvoda.length){
         skladistiLS('proizvodiKorpa',noviNizProizvoda)
         tabela(noviNizProizvoda)
+        brojProizvodaUKorpi()
     }
     else{
-        localStorage.removeItem('proizvodiKorpa')
+        obrisiLS('proizvodiKorpa')
         ispisPraznaKorpa()
         brojProizvodaUKorpi()
     }
@@ -582,38 +641,39 @@ $(document).on("click",".brisiIzKorpe", function(e) {
 //brisanje svih proizvoda iz korpe
 function obrisiKorpu(){
     document.querySelector('#btnObrisi').addEventListener('click',function(){
-        localStorage.removeItem('proizvodiKorpa')
+        obrisiLS('proizvodiKorpa')
         ispisProizvodaZaKorpu()
     })
 }
 
 //dohvatanje elemenata
-var korisnkickoIme=document.querySelector('#korisnik')
-var lozinka=document.querySelector('#lozinka')
-var btnNastavi=document.querySelector('#btnNastavi')
-var lozinkaProvera=document.querySelector('#btnProvera')
-var ime=document.querySelector('#ime')
-var prezime=document.querySelector('#prezime')
-var mejl=document.querySelector('#email')
-var ddlGrad=document.querySelector('#ddlGrad')
-var posta=document.querySelector('#posta')
-var ulica=document.querySelector('#ulica')
-var telefon=document.querySelector('#telefon')
-var pouzece=document.querySelector('#pouzece')
-var kartica=document.querySelector('#kartica')
-var karticaBroj=document.querySelector('#karticaBroj')
-var btnZavrsiKupovinu=document.querySelector('#btnZavrsi')
-var gradovi=["Beograd","Nis","Kragujevac","Kraljevo"]
-var postanskiBrojevi=['11000','18000','34000','36000']
+const korisnkickoIme=document.querySelector('#korisnik')
+const lozinka=document.querySelector('#lozinka')
+const btnNastavi=document.querySelector('#btnNastavi')
+const lozinkaProvera=document.querySelector('#btnProvera')
+const ime=document.querySelector('#ime')
+const prezime=document.querySelector('#prezime')
+const mejl=document.querySelector('#email')
+const ddlGrad=document.querySelector('#ddlGrad')
+const posta=document.querySelector('#posta')
+const ulica=document.querySelector('#ulica')
+const telefon=document.querySelector('#telefon')
+const karticaBroj=document.querySelector('#karticaBroj')
+const btnZavrsiKupovinu=document.querySelector('#btnZavrsi')
+const gradovi=["Beograd","Nis","Kragujevac","Kraljevo"]
+const postanskiBrojevi=['11000','18000','34000','36000']
+
+
 
 //regularni izrazi
-var regIme=/^[A-Z]{1}[a-z]{2,14}$/
-var regPrezime=/^[A-Z]{1}[a-z]{4,29}$/
-var regLozinka=/^[A-Z]{1}[a-z0-9!@#$%^.&*]{7,19}$/
-var regMejl=/^[a-zA-Z0-9]([a-z]|[0-9])+\.?-?_?([a-z]|[0-9])*\.?([a-z]|[0-9])*\@[a-z]{3,}\.([az]{2,4}\.)?([a-z]{2,4})$/
-var regKorisnickoIme=/^([a-z]{1})[a-z0-9]{4,29}$/
-var regKartica=/^[\d]{18}/
-var regTelefon=/^06[\d]{7,8}/
+const regIme=/^[A-ZČĆŽŠĐ]{1}[a-zčćžšđ]{2,14}$/
+const regPrezime=/^[A-ZČĆŽŠĐ]{1}[a-zčćžšđ]{4,29}$/
+const regLozinka=/^[A-Z]{1}[a-z0-9!@#$%^.&*]{7,19}$/
+const regMejl=/^[a-zA-Z0-9]([a-z]|[0-9])+\.?-?_?([a-z]|[0-9])*\.?([a-z]|[0-9])*\@[a-z]{3,}\.([az]{2,4}\.)?([a-z]{2,4})$/
+const regKorisnickoIme=/^([a-z]{1})[a-z0-9]{4,29}$/
+const regKartica=/^[\d]{18}/
+const regTelefon=/^06[\d]{7,8}/
+const regUlica=/^([A-ZČĆŽŠĐ]|[1-9]{1,5})[A-ZČĆŽŠĐa-zčćžšđ\d\-\.\s]+$/
 var greska
 
 //funkcija za proveru forme za placanje
@@ -632,19 +692,11 @@ function validacijaPlacanja(){
             }
         })
     }
-    //provera kartice ako se izabere placanje karticom
-    kartica.addEventListener('blur',function(){
-        proveraPolja(kartica,regKartica)
-        if(!greska){
-            btnZavrsiKupovinu.removeAttribute('disabled')
-        }
-        else{
-            btnZavrsiKupovinu.setAttribute('disabled')
-        }
-    })
+    
     //provera forme posle klika i zavrsetak kupovine
     btnZavrsiKupovinu.addEventListener('click',function(){
         proveraPolja(ime,regIme)
+        proveraPolja(ulica,regUlica)
         proveraPolja(prezime,regPrezime)
         proveraPolja(mejl,regMejl)
         proveraPolja(telefon,regTelefon)
@@ -692,30 +744,22 @@ function validacijaPlacanja(){
     dogadjajPolje(prezime,'blur',regPrezime)
     dogadjajPolje(mejl,'blur',regMejl)
     dogadjajPolje(telefon,'blur',regTelefon)
+    dogadjajPolje(ulica,'blur',regUlica)
+    dogadjajPolje(karticaBroj,'blur',regKartica)
 
+    //pouzece 
+    document.querySelectorAll('.nacinPlacanja').forEach(stanje => stanje.addEventListener('change',promenaPlacanja))
+    function promenaPlacanja(){
+        var selektovani=document.querySelector('input[class="nacinPlacanja"]:checked').value
+        if(selektovani=="Kartica"){
+            karticaBroj.classList.remove('nevidljiv')
+        }
+        if(selektovani=="Pouzece"){
+            karticaBroj.classList.add('nevidljiv')
+            karticaBroj.nextElementSibling.classList.add('nevidljiv')
+        }
+    }   
 
-    //funkcija za dodavanje dogadajaja polju
-    function dogadjajPolje(polje,dogadjaj,regEx){
-        polje.addEventListener(dogadjaj,function(){
-            proveraPolja(polje,regEx)
-        })
-    }
-
-    //provera tekstualnih polja
-    function proveraPolja(id,reg){
-        if(reg.test(id.value)){
-            id.nextElementSibling.classList.add('nevidljiv')
-            greska=false
-        }
-        else if(id.value==""){
-            id.nextElementSibling.classList.remove('nevidljiv')
-            greska=true
-        }
-        else{
-            id.nextElementSibling.classList.remove('nevidljiv')
-            greska=true
-        }
-    }
     //ispisivanje gradova i provera grada i postanskog broja koji se automatski popunjava
     gradPostanskiBrojIspis()
     function gradPostanskiBrojIspis(){
@@ -725,6 +769,8 @@ function validacijaPlacanja(){
         }
         ddlGrad.innerHTML=ispis
     }
+
+
     function proveraPostanskiBroj(){
         if(ddlGrad.value!="Izaberite"){
             ddlGrad.nextElementSibling.classList.add('nevidljiv')
@@ -735,6 +781,7 @@ function validacijaPlacanja(){
             greska=true
         }
     }
+
     gradoviPostanskiBroj()
     function gradoviPostanskiBroj(){
         ddlGrad.addEventListener('change',function(){
@@ -746,9 +793,64 @@ function validacijaPlacanja(){
             }
             else{
                 ddlGrad.nextElementSibling.classList.remove('nevidljiv')
+                document.querySelector('#posta').value='Grad nije izabran'
                 greska=true
             }
         })
     }
 }
 
+
+//funckija za dodelu dogadja polju
+function dogadjajPolje(polje,dogadjaj,regEx){
+    polje.addEventListener(dogadjaj,function(){
+        proveraPolja(polje,regEx)
+    })
+}
+
+//provera tekstualnih polja
+function proveraPolja(id,reg){
+    if(reg.test(id.value)){
+        id.nextElementSibling.classList.add('nevidljiv')
+        greska=false
+    }
+    else if(id.value==""){
+        id.nextElementSibling.classList.remove('nevidljiv')
+        greska=true
+    }
+    else{
+        id.nextElementSibling.classList.remove('nevidljiv')
+        greska=true
+    }
+}
+
+function kontaktForma(){
+    const punoIme=document.querySelector('#imePrezime')
+    const mejlAdresa=document.querySelector('#mailAdresa')
+    const naslov=document.querySelector('#naslov')
+    const poruka=document.querySelector('#poruka')
+    const btnPosalji=document.querySelector('#btnPosalji')
+
+    const imePrezimeReg=/^[A-ZČĆŽŠĐ][a-zčćžšđ]{2,14}(\s[A-ZČĆŽŠĐ][a-zčćžšđ]{2,19})+$/
+    const mejlAdresaReg=/^[a-zA-Z0-9]([a-z]|[0-9])+\.?-?_?([a-z]|[0-9])*\.?([a-z]|[0-9])*\@[a-z]{3,}\.([az]{2,4}\.)?([a-z]{2,4})$/
+    const naslovReg=/^[\w]{5,50}/
+    const porukaReg=/^[\w]{20,255}/
+
+    btnPosalji.addEventListener('click',function(){
+        proveraPolja(punoIme,imePrezimeReg)
+        proveraPolja(mejlAdresa,mejlAdresaReg)
+        proveraPolja(naslov,naslovReg)
+        proveraPolja(poruka,porukaReg)
+        if(!greska){
+            btnPosalji.nextElementSibling.classList.remove('nevidljiv')
+        }else{
+            btnPosalji.nextElementSibling.classList.add('nevidljiv')
+        }
+    })
+
+    dogadjajPolje(punoIme,'blur',imePrezimeReg)
+    dogadjajPolje(mejlAdresa,'blur',mejlAdresaReg)
+    dogadjajPolje(naslov,'blur',naslovReg)
+    dogadjajPolje(poruka,'blur',porukaReg)
+
+}

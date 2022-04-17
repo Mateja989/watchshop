@@ -429,6 +429,15 @@ h2.title:before{
   justify-content: space-between;
   flex-wrap: wrap;
 }
+#main-contact-form p{
+  font-size: 12px !important;
+  color: rgb(245, 146, 146) !important;
+  margin-bottom: 5px !important;
+  text-align: left;
+}
+#main-contact-form .form-group{
+  margin-bottom: 0px !important;
+}
 .shipping {
   background-color: #F2F2F2;
   margin-top: 40px;
@@ -682,17 +691,17 @@ vertisement {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   left: unset !important;
   right: unset !important;
   top: unset !important;
   bottom: unset !important;
-  width: fit-content;
   padding: 15px;
   background-color: #ffffff;
 }
 .left1{
-  width: fit-content;
+  width: 50%;
 }
 .big-img{
   width: 100%;
@@ -724,8 +733,31 @@ vertisement {
   font-family: 20px;
   font-weight: 500;
   margin: 10px 0;
+}
+.price1{
+  color: rgb(96, 96, 96);
+  font-family: 20px;
+  font-weight: 500;
+  font-size: 22px;
+  margin: 10px 0;
   padding-left: 20px;
 }
+.img_cart img{
+  width: 150px !important;
+}
+.img_cart{
+  text-align: center;
+}
+.cart_delete{
+  margin: 0px !important;
+  margin-top: 60px !important;
+}
+.cart_delete a{
+  background-color: #252525 !important;
+}
+
+
+
 .quantity p{
   font-size: 20px;
   font-weight: 600;
@@ -739,9 +771,10 @@ vertisement {
   margin: 20px 0;
 }
 .right{
-  width: 60%;
+  width: 50%;
 
 }
+
 .table{
   border-bottom: 0px !important;
   margin-bottom: 0px !important;
@@ -1201,7 +1234,7 @@ vertisement {
 
 
 .shopper-info .btn-primary {
-  width: 30%;
+  width: 30% ;
   background:#04b995;
   border: 0 none;
   border-radius: 0;
@@ -1210,6 +1243,18 @@ vertisement {
 }
 .loz{
   width: 50% !important;
+}
+#resetFilter{
+  margin-bottom: 30px;
+  width: 100%;
+  padding: 5px;
+  border: 0px;
+  color: #fff;
+  background-color: #04b995;
+  text-transform: uppercase;
+}
+button a{
+  color: #fff !important;
 }
 .form-two {
   width: 100%;
@@ -1346,61 +1391,7 @@ nav #icon{
   margin: 6px 0;
 }
 
-@media(max-width:1048px){
-  label.logo{
-      font-size: 32px;
-      padding-left: 20px;
-  }
-  nav ul{
-      margin-right: 20px;
-  }
-  nav a{
-      font-size: 17px;
-  }
-}
-@media(max-width:909px){
-  nav #icon{
-      display: block;
-  }
-  nav ul{
-      position: fixed;
-      width: 100%;
-      background-color: rgba(29, 29, 29, 0.8);
-      left: -100%;
-      top:80px;
-      text-align: center;
-      transition: all .5s;
-  }
-  nav li{
-      display: block;
-      margin: 50px 0;
-      line-height: 30px;
-  }
-  nav a{
-      font-size:20px;
-  }
-  nav ul.show{
-      left: 0;
-  }
-}
-@media(max-width:490px){
-  label.logo{
-    width: 50%;
-    padding: 0px;
-  }
-  #icon div{
-    width: 30px;
-    height: 5px;
-    background-color: rgb(255, 255, 255);
-    margin: 6px 0;
-  }
-  nav a{
-    font-size: 14px;
-  }
-  .start-page{
-    margin-top: 30%;
-  }
-}
+
 .mm-kontakt{
   padding-bottom: 50px;
 }
@@ -1436,5 +1427,6 @@ nav #icon{
 }
 
 .contact-info .social-networks ul li a:hover{
-  color: #3D56B2;
+  color: #04b995;
 }
+
