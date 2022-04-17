@@ -6,8 +6,27 @@ function dohvati(url,callback){
         success:function(result){
             callback(result);
         },
-        error:function(err){
-            console.log(err)
+        error: function(xhr, exception) {
+            let message = "";
+            switch(xhr.status) {
+                case 0: message = "No Internet connection, please verify your network connection."; break;
+                case 400: message = "[Bad Request][400]: The request had bad syntax or was inherently impossible to be satisfied."; break;
+                case 401: message = "[Unauthorized][401]: The request was a legal request, but the server is refusing to respond to it."; break;
+                case 403: message = "[Forbidden][403]: The request was a legal request, but the server is refusing to respond to it."; break;
+                case 404: message = "[Not Found][404]: The requested page not found, but may be available again in the future."; break;
+                case 410: message = "[Gone][410]: The requested page is no longer available."; break;
+                case 500: message = "[Internal Server Error][500]: The server has encountered a situation it doesn't know how to handle."; break;
+                case 503: message = "[Service Unavailable][503]: The server is currently unavailable (overloaded or down)."; break;
+                default: {
+                    switch(exception) {
+                        case "parsererror": message = "Requested JSON parse failed."; break;
+                        case "timeout": message = "Time out error."; break;
+                        case "abort": message = "Ajax request was aborted by the server.";
+                        default: message = `[Uncaught Error][${xhr.status}]: ${xhr.responseText}`; break;
+                    } break;
+                }
+            } 
+            $("body").html(message);
         }
     })
 }
@@ -26,15 +45,11 @@ window.onload=function(){
     let url = window.location.pathname;
 
     navigacioniMeni()
-
+    brojProizvodaUKorpi()
     var brendovi=vratiLS('nizBrendova')
     var kategorije=vratiLS('nizKategorija')
     var kolekcije=vratiLS('nizKolekcija')
-    
 
-    //console.log(brendovi,kategorije,kolekcije)
-
-    brojProizvodaUKorpi()
 
     if(url == "/watchshop/index.html" || url == "/watchshop/"){
         dohvati("satovi.json",najnovijiProizvodi)
@@ -43,6 +58,7 @@ window.onload=function(){
         dohvati("brendovi.json",ispisBrendova)
         slider()
     }
+
     if(url == "/watchshop/shop.html"){
         dohvati("satovi.json",sviProizvodi)
         kreirajChb(brendovi,"#brend",'brendovi',".brendovi")
@@ -51,19 +67,21 @@ window.onload=function(){
         resetujFilter()
         
     }
+
     if(url == "/watchshop/checkout.html"){
         validacijaPlacanja()
         ispisProizvodaZaKorpu()
-        obrisiKorpu()
         ukupnaCifra()
+        obrisiKorpu()
     }
+
     if(url=="/watchshop/contact-us.html"){
         kontaktForma()
     }
 
 }
 
-
+//funkcija za kreiranje menija
 function navigacioniMeni(){
     dohvati('nav.json',ispisNavigacija)
 
@@ -85,6 +103,7 @@ function ispisNavigacija(nizLinkova){
     document.querySelector('#listaNav').innerHTML=ispis
 }
 
+//funkcija za smestanje u localstorage
 dohvati("satovi.json", function(result){
     skladistiLS('nizSatova',result)
 })
@@ -97,9 +116,6 @@ dohvati("brendovi.json", function(result){
 dohvati("kategorije.json", function(result){
     skladistiLS('nizKategorija',result)
 })
-
-    
-
 
 //slider na pocetnoj strani
 var headerCover=['images/home/banner-01.jpg','images/home/banner-02.jpg','images/home/banner-03.jpg']
@@ -118,6 +134,7 @@ function slider(){
 function filterPromeni() {
     dohvati("satovi.json",sviProizvodi);
 }
+
 //kategorije pocetna strana
 function ispisKat(nizKategorija){
     let ispis="";
@@ -134,6 +151,7 @@ function ispisKat(nizKategorija){
         filterPromeni()
     });
 }
+
 //brendovi pocetna
 function ispisBrendova(nizBrendova){
     let ispis=`<ul class="nav nav-pills nav-stacked">`
@@ -148,6 +166,7 @@ function ispisBrendova(nizBrendova){
     });
 }
 
+
 //funckija za resetovanje filtera
 function resetujFilter(){
     document.querySelector('#resetFilter').addEventListener('click',function(){
@@ -160,6 +179,7 @@ function resetujFilter(){
         filterPromeni()
     })
 }
+
 
 //ispis proizvoda na shop strani
 function sviProizvodi(nizProizvoda){
@@ -182,6 +202,7 @@ function sviProizvodi(nizProizvoda){
     }
 }
 
+
 //funkcija za ispis najnovijih proizvoda na pocetnoj strani
 function najnovijiProizvodi(nizProizvoda){ 
         nizProizvoda.sort(function(a,b){
@@ -193,6 +214,7 @@ function najnovijiProizvodi(nizProizvoda){
         nizProizvoda=nizProizvoda.slice(0,6)
         proizvodiIspis(nizProizvoda,"#najnoviji")
 }
+
 
 //funkcija za ispis glavnog bloka proizvoda
 function proizvodiIspis(nizProizvoda,idBloka){
@@ -231,13 +253,13 @@ function proizvodiIspis(nizProizvoda,idBloka){
     document.querySelector(idBloka).innerHTML=ispis
 }
 
-//obrada kartica
+
+//obrada broja proizovda po brendu
 function brojProizvoda(id){
     var sat=vratiLS('nizSatova')
     let filterprod = sat.filter(el => el.brendId == id)
     return filterprod.length;
 }
-
 
 //obrada kolekcije
 function obradaKolekcije(id){
@@ -333,7 +355,6 @@ function filtriraj(nizProizvoda,selektor,nazivLS) {
     const selektovani = document.querySelectorAll(selektor)
     let id = []
 
-    
     if(nazivLS=='cekiranoKat'){
         cekirajIzLocalStorage('.kategorije',nazivLS)
     }
@@ -341,7 +362,6 @@ function filtriraj(nizProizvoda,selektor,nazivLS) {
         cekirajIzLocalStorage('.brendovi',nazivLS)
     }
     
-
     selektovani.forEach(x => {
             id.push(Number(x.value))
         })
@@ -440,10 +460,11 @@ function ispisiModal(nizProizvoda){
         </div>
     </div>`
     }
-    $(".modal-bg").html(ispis);
+    document.querySelector('.modal-bg').innerHTML=ispis
     document.querySelector('#add-to-cart').addEventListener('click',dodajUKorpu)
 }
 
+//dogadjaji za modal
 $(document).on("click",".mesto", function() {
     id = $(this).data("id");
     $(".modal-bg").html("");
@@ -477,8 +498,7 @@ function obradaSpecifikacije(specObj){
     return html;
 }
 
-/***************** KORPA ****************/
-
+//funkcija za korpu
 function dodajUKorpu(){
     var proizvodiIzKorpe= vratiLS('proizvodiKorpa')
     if(proizvodiIzKorpe){
@@ -553,7 +573,9 @@ function ispisPraznaKorpa(){
         document.querySelector('#praznaKorpa').innerHTML=`
         <h4 class="text-center">Vaša korpa je trenutno prazna.</h4>
         <p class="text-center">Pogledajte naš asortiman <a href="shop.html">ovde.</a></p>`
+        document.querySelector('.totalnaCena').innerHTML=`0,00RSD`
 }
+
 function IspisiSadrzajKorpe(){
     var satoviIzKorpe=vratiLS('proizvodiKorpa')
     var sviProizvodi=vratiLS('nizSatova')
@@ -574,7 +596,7 @@ function IspisiSadrzajKorpe(){
 //funkcija za kreiranje tabele za proizvode iz korpe
 function tabela(niz){
     let ispis=''
-    var ukupna=0
+    let ukupna = 0
     for(let proizvod of niz){
         ispis+=`<tr>
         <td class="img_cart">
@@ -596,17 +618,11 @@ function tabela(niz){
             <a class="cart_quantity_delete brisiIzKorpe"  data-idproizvoda="${proizvod.id}" href=""><i class="fa fa-times"></i></a>
         </td>
     </tr>`
-    ukupna+=proizvod.cena.nova
+       ukupna+=proizvod.cena.nova
     }
-    if(ukupna){
-        document.querySelector('.totalnaCena').innerHTML=`${ukupna},00RSD`
-        console.log('rado')
-    } 
+    document.querySelector('.totalnaCena').innerHTML=`${ukupna},00RSD`
     document.querySelector('#ispisSadrzajaKorpe').innerHTML=ispis
 }
-
-
-
 
 //brisanje jednog proizvoda iz korpe
 $(document).on("click",".brisiIzKorpe", function(e) {
@@ -614,7 +630,8 @@ $(document).on("click",".brisiIzKorpe", function(e) {
     let proizvodi=vratiLS('proizvodiKorpa')
     var sviProizvodi=vratiLS('nizSatova')
     let proizvod = $(this).data("idproizvoda");
-    let ostaloUKorpi=proizvodi.filter(p => p.id != proizvod)
+    let ostaloUKorpi=proizvodi.filter(p => p.id != proizvod);
+
     let noviNizProizvoda=[]
 
     for(let x of ostaloUKorpi){
@@ -625,10 +642,10 @@ $(document).on("click",".brisiIzKorpe", function(e) {
             }
         }
     }
-    if(noviNizProizvoda.length){
-        skladistiLS('proizvodiKorpa',noviNizProizvoda)
-        tabela(noviNizProizvoda)
+    if(noviNizProizvoda.length > 0){
         brojProizvodaUKorpi()
+        skladistiLS('proizvodiKorpa',noviNizProizvoda)
+        tabela(noviNizProizvoda);
     }
     else{
         obrisiLS('proizvodiKorpa')
@@ -643,6 +660,8 @@ function obrisiKorpu(){
     document.querySelector('#btnObrisi').addEventListener('click',function(){
         obrisiLS('proizvodiKorpa')
         ispisProizvodaZaKorpu()
+        brojProizvodaUKorpi()
+        document.querySelector('.totalnaCena').innerHTML=`0,00RSD`
     })
 }
 
@@ -824,6 +843,7 @@ function proveraPolja(id,reg){
     }
 }
 
+//funkcija za proveru forma na kontakt strani
 function kontaktForma(){
     const punoIme=document.querySelector('#imePrezime')
     const mejlAdresa=document.querySelector('#mailAdresa')
@@ -833,8 +853,8 @@ function kontaktForma(){
 
     const imePrezimeReg=/^[A-ZČĆŽŠĐ][a-zčćžšđ]{2,14}(\s[A-ZČĆŽŠĐ][a-zčćžšđ]{2,19})+$/
     const mejlAdresaReg=/^[a-zA-Z0-9]([a-z]|[0-9])+\.?-?_?([a-z]|[0-9])*\.?([a-z]|[0-9])*\@[a-z]{3,}\.([az]{2,4}\.)?([a-z]{2,4})$/
-    const naslovReg=/^[\w]{5,50}/
-    const porukaReg=/^[\w]{20,255}/
+    const naslovReg=/^[\w\s]{5,50}/
+    const porukaReg=/^[\w\s]{20,255}/
 
     btnPosalji.addEventListener('click',function(){
         proveraPolja(punoIme,imePrezimeReg)

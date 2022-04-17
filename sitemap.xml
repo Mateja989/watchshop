@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://mateja989.github.io/watchshop/index.html</loc>
+		<lastmod>18.04.2022</lastmod>
+		<changedfreq>monthly</changedfreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://mateja989.github.io/watchshop/shop.html</loc>
+		<lastmod>18.04.2022</lastmod>
+		<changedfreq>monthly</changedfreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mateja989.github.io/watchshop/contact-us.html</loc>
+		<lastmod>18.04.2022</lastmod>
+		<changedfreq>monthly</changedfreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://mateja989.github.io/watchshop/checkout.html</loc>
+		<lastmod>18.04.2022</lastmod>
+		<changedfreq>monthly</changedfreq>
+		<priority>0.5</priority>
+	</url>
+	
+</urlset>
