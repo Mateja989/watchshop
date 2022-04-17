@@ -574,10 +574,6 @@ ul.sub-menu{
 	  font-size: 14px !important;
 	  text-align: center;
 	}
-	label#korpa img{
-	  width: 60% !important;
-	  height: 70px !important;
-	}
   }
 
 @media(max-width:610px){
