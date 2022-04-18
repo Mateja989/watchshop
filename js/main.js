@@ -643,16 +643,14 @@ $(document).on("click",".brisiIzKorpe", function(e) {
         }
     }
     if(noviNizProizvoda.length > 0){
-        brojProizvodaUKorpi()
         skladistiLS('proizvodiKorpa',noviNizProizvoda)
         tabela(noviNizProizvoda);
     }
     else{
         obrisiLS('proizvodiKorpa')
         ispisPraznaKorpa()
-        brojProizvodaUKorpi()
     }
-    
+    brojProizvodaUKorpi()
 })
 
 //brisanje svih proizvoda iz korpe
@@ -723,6 +721,7 @@ function validacijaPlacanja(){
         if(!greska){
             uspeh('#korisnikForma')
             uspeh('#zaPlacanje')
+            document.querySelector('.totalnaCena').innerHTML=`0,00RSD`
         } 
     })
 
