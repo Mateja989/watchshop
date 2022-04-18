@@ -75,7 +75,7 @@ window.onload=function(){
         obrisiKorpu()
     }
 
-    if(url=="/watchshop/contact-us.html"){
+    if(url=="/contact-us.html"){
         kontaktForma()
     }
 
