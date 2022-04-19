@@ -688,7 +688,7 @@ const regPrezime=/^[A-ZČĆŽŠĐ]{1}[a-zčćžšđ]{4,29}$/
 const regLozinka=/^[A-Z]{1}[a-z0-9!@#$%^.&*]{7,19}$/
 const regMejl=/^[a-zA-Z0-9]([a-z]|[0-9])+\.?-?_?([a-z]|[0-9])*\.?([a-z]|[0-9])*\@[a-z]{3,}\.([az]{2,4}\.)?([a-z]{2,4})$/
 const regKorisnickoIme=/^([a-z]{1})[a-z0-9]{4,29}$/
-const regKartica=/^[\d]{18}/
+const regKartica=/^[\d]{17}/
 const regTelefon=/^06[\d]{7,8}/
 const regUlica=/^([A-ZČĆŽŠĐ]|[1-9]{1,5})[A-ZČĆŽŠĐa-zčćžšđ\d\-\.\s]+$/
 var greska
